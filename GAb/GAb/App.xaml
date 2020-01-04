@@ -6,6 +6,5 @@
              mc:Ignorable="d"
              x:Class="GAb.App">
     <Application.Resources>
-
     </Application.Resources>
 </Application>

@@ -22,6 +22,8 @@ namespace GAb.views
 		//Login button
 		private async void Button_Clicked(object sender, EventArgs e)
 		{
+        //    //Navigation.PushAsync(new HomeScreen());
+        //}
 			bool valid = false;
 			String username = usernameEntry.Text;
 			String password = passwordEntry.Text;
@@ -37,10 +39,10 @@ namespace GAb.views
 			}
 		}
 
-		//Signup button
-		private void Button_Clicked_1(object sender, EventArgs e)
+        //Signup button
+        private void Button_Clicked_1(object sender, EventArgs e)
 		{
-
+            Navigation.PushAsync(new RegisterScreen());
 		}
 	}
 }
