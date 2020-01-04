@@ -27,7 +27,7 @@ namespace GAb.dao
 			return _database.Table<models.Option>().ToListAsync();
 		}
 
-		public Task<models.Option> GetByIdAsync(int id)
+        public Task<models.Option> GetByIdAsync(int id)
 		{
 			return _database.Table<models.Option>()
 							.Where(i => i.ID == id)

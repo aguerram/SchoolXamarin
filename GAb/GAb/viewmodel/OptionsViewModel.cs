@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using GAb.models;
 using GAb.services;
@@ -16,11 +17,12 @@ namespace GAb.viewmodel
 
         public OptionsViewModel()
         {
+            studentService = new StudentService();
             fillOptions();
         }
         public async Task<int> fillOptions()
         {
-            this.Options = await studentService.GetOptions();
+            this.Options = await studentService.optionDAO.ListAsync();
             return 1;
         }
     }
