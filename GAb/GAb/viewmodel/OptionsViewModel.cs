@@ -25,5 +25,6 @@ namespace GAb.viewmodel
         {
 			this.Options = await optionDAO.ListAsync();
         }
+		
     }
 }

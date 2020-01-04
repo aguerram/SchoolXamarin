@@ -6,7 +6,6 @@ using System.Text;
 
 namespace GAb.viewmodel
 {
-	
     public class BaseViewModel : INotifyPropertyChanged
 	{
 		public event PropertyChangedEventHandler PropertyChanged;
