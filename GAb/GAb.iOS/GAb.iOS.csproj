@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A796CFC2-F61D-414B-AEFF-C16F96CAC78B}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>GAb.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>GAb.iOS</AssemblyName>
+    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\user.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\user.imageset\user.png" />
+    <ImageAsset Include="Assets.xcassets\user.imageset\user-1.png" />
+    <ImageAsset Include="Assets.xcassets\user.imageset\user-2.png" />
+    <ImageAsset Include="Assets.xcassets\user.imageset\user-3.png" />
+    <ImageAsset Include="Assets.xcassets\user.imageset\user-4.png" />
+    <ImageAsset Include="Assets.xcassets\clipboard1.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\clipboard1.imageset\clipboard.png" />
+    <ImageAsset Include="Assets.xcassets\clipboard1.imageset\clipboard-1.png" />
+    <ImageAsset Include="Assets.xcassets\clipboard1.imageset\clipboard-2.png" />
+    <ImageAsset Include="Assets.xcassets\clipboard1.imageset\clipboard-3.png" />
+    <ImageAsset Include="Assets.xcassets\loupe.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\loupe.imageset\loupe.png" />
+    <ImageAsset Include="Assets.xcassets\loupe.imageset\loupe-1.png" />
+    <ImageAsset Include="Assets.xcassets\loupe.imageset\loupe-2.png" />
+    <ImageAsset Include="Assets.xcassets\loupe.imageset\loupe-3.png" />
+    <ImageAsset Include="Assets.xcassets\plus.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\plus.imageset\plus %282%29.png" />
+    <ImageAsset Include="Assets.xcassets\plus.imageset\plus %282%29-1.png" />
+    <ImageAsset Include="Assets.xcassets\plus.imageset\plus %282%29-2.png" />
+    <ImageAsset Include="Assets.xcassets\plus.imageset\plus %282%29-3.png" />
+    <ImageAsset Include="Assets.xcassets\logout.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\book.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logout.imageset\logout.png" />
+    <ImageAsset Include="Assets.xcassets\logout.imageset\logout-1.png" />
+    <ImageAsset Include="Assets.xcassets\logout.imageset\logout-2.png" />
+    <ImageAsset Include="Assets.xcassets\logout.imageset\logout-3.png" />
+    <ImageAsset Include="Assets.xcassets\book.imageset\book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\GAb\GAb.csproj">
+      <Project>{4FA0A8D6-E8DA-4982-9829-85CC12D29942}</Project>
+      <Name>GAb</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\user.imageset\" />
+    <Folder Include="Assets.xcassets\clipboard.imageset\" />
+    <Folder Include="Assets.xcassets\clipborad.imageset\" />
+    <Folder Include="Assets.xcassets\clipboard1.imageset\" />
+    <Folder Include="Assets.xcassets\loupe.imageset\" />
+    <Folder Include="Assets.xcassets\plus.imageset\" />
+    <Folder Include="Assets.xcassets\logout.imageset\" />
+    <Folder Include="Assets.xcassets\book.imageset\" />
+  </ItemGroup>
+</Project>

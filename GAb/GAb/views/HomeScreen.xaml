@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GAb.views.HomeScreen">
+     <ContentPage.Resources>
+          <ResourceDictionary>
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="BorderColor" Value="Black" />
+                <Setter Property="BorderRadius" Value="5" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout Spacing="30" Padding="10">
+        <StackLayout HeightRequest="150" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" >
+          <Image MinimumWidthRequest="1000" Source="user.png"/>
+        </StackLayout>
+        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+            <Button Text="Abscence" Style="{StaticResource buttonStyle}"/>
+            <Image Source="clipboard1.png"/>
+        </StackLayout>
+        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+            <Button Text="Add student" Style="{StaticResource buttonStyle}"/>
+            <Image Source="plus.png"/>
+        </StackLayout>
+        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+            <Button Text="New lesson" Style="{StaticResource buttonStyle}"/>
+            <Image Source="book.png"/>
+        </StackLayout>
+        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+            <Button Text="Search" Style="{StaticResource buttonStyle}"/>
+            <Image Source="loupe.png"/>
+        </StackLayout>
+        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+            <Button Text="Logout" Style="{StaticResource buttonStyle}"/>
+            <Image Source="logout.png"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
