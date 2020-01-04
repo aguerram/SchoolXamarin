@@ -40,9 +40,13 @@
                   Title="options" >
           </Picker>
           <Picker Title="Select an option" 
-                    ItemsSource="{Binding Options}" 
                     ItemDisplayBinding="{Binding title}"
-                    SelectedItem="{Binding SelectedOption}" />
+                    SelectedItem="{Binding SelectedOption}" >
+                  <Picker.ItemsSource>
+                            <x:Binding Source="{Binding Options}">
+                            </x:Binding>
+                  </Picker.ItemsSource>
+          </Picker>
         </StackLayout>
 
     </StackLayout>

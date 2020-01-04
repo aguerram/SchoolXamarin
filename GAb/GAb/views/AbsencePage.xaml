@@ -20,12 +20,12 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Label Text="Choice" Grid.Row="0" Grid.Column="0" />
-                <Picker Grid.Row="1" Grid.Column="0" Title="Choice">
-                    <Picker.ItemsSource>
-                        <x:Binding Source="{Binding Options}">
-                            
-                        </x:Binding>
-                    </Picker.ItemsSource>
+                <Picker 
+                    ItemsSource="{Binding Options}" 
+                    ItemDisplayBinding="{Binding title}" 
+                    Grid.Row="1" 
+                    Grid.Column="0" 
+                    Title="Choice">
                 </Picker>
 
                 <Label Text="Lesson" Grid.Row="0" Grid.Column="1" />
