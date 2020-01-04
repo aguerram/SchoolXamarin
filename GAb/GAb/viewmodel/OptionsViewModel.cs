@@ -5,11 +5,17 @@ using GAb.models;
 
 namespace GAb.viewmodel
 {
+<<<<<<< HEAD
     class OptionsViewModel:ViewModelBase
     {
+=======
+    class OptionsViewModel : BaseViewModel
+    {
+
+>>>>>>> 586be253f16d36b7a3dfba3d5648ae1a8ac8e7a9
         public ObservableCollection<Option> Options { get; set; }
 
-        public OptionsViewModel()
+		public OptionsViewModel()
         {
             Options = new ObservableCollection<Option>();
 
@@ -17,6 +23,7 @@ namespace GAb.viewmodel
             Options.Add(new Option("GTR +"));
         }
 
+<<<<<<< HEAD
         Option selectedOption;
         public Option SelectedOption
         {
@@ -31,5 +38,7 @@ namespace GAb.viewmodel
             }
         }
 
+=======
+>>>>>>> 586be253f16d36b7a3dfba3d5648ae1a8ac8e7a9
     }
 }

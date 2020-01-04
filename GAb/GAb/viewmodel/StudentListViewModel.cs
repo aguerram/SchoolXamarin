@@ -9,14 +9,14 @@ namespace GAb.viewmodel
 	class StudentListViewModel: BaseViewModel
 	{
 		public ObservableCollection<StudentListItem> Students { get; set; }
-		public ObservableCollection<Option> Options { get; set; }
-		public ObservableCollection<Lesson> Lessons { get; set; }
+		public List<Option> Options { get; set; }
+		public List<Lesson> Lessons { get; set; }
 		public StudentListViewModel()
 		{
 
 			Students = new ObservableCollection<StudentListItem>();
-			Options = new ObservableCollection<Option>();
-			Lessons = new ObservableCollection<Lesson>();
+			Options = new List<Option>();
+			Lessons = new List<Lesson>();
 
 			Options.Add(new Option("G.INFO"));
 			Options.Add(new Option("GTR +"));
