@@ -13,31 +13,33 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <StackLayout Spacing="30" Padding="10">
-        <StackLayout HeightRequest="150" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" >
-          <Image MinimumWidthRequest="1000" Source="user.png"/>
-        </StackLayout>
-        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-            <Button Clicked="NavigateToAbsenceScreen" Text="Abscence" Style="{StaticResource buttonStyle}"/>
-            <Image Source="clipboard1.png"/>
-        </StackLayout>
-        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-            <Button Clicked="NavigateToAddStudentScreen" Text="Add student" Style="{StaticResource buttonStyle}"/>
-            <Image Source="plus.png"/>
-        </StackLayout>
-        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-            <Button Text="New lesson" Style="{StaticResource buttonStyle}"/>
-            <StackLayout  Orientation="Horizontal" WidthRequest="30"  HeightRequest="1" Grid.Column="0">
-                <Image Aspect="Fill" Source="book.png"/>
+    <ScrollView>
+        <StackLayout Spacing="30" Padding="10">
+            <StackLayout HeightRequest="150" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" >
+                <Image MinimumWidthRequest="1000" Source="user.png"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                <Button Clicked="NavigateToAbsenceScreen" Text="Abscence" Style="{StaticResource buttonStyle}"/>
+                <Image Source="clipboard1.png"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                <Button Clicked="NavigateToAddStudentScreen" Text="Add student" Style="{StaticResource buttonStyle}"/>
+                <Image Source="plus.png"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                <Button Text="New lesson" Style="{StaticResource buttonStyle}"/>
+                <StackLayout  Orientation="Horizontal" WidthRequest="30"  HeightRequest="1" Grid.Column="0">
+                    <Image Aspect="Fill" Source="book.png"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                <Button Text="Search" Style="{StaticResource buttonStyle}"/>
+                <Image Source="loupe.png"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                <Button Text="Logout" Style="{StaticResource buttonStyle}"/>
+                <Image Source="logout.png"/>
             </StackLayout>
         </StackLayout>
-        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-            <Button Text="Search" Style="{StaticResource buttonStyle}"/>
-            <Image Source="loupe.png"/>
-        </StackLayout>
-        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-            <Button Text="Logout" Style="{StaticResource buttonStyle}"/>
-            <Image Source="logout.png"/>
-        </StackLayout>
-    </StackLayout>
+    </ScrollView>
 </ContentPage>

@@ -10,31 +10,32 @@
     <ContentPage.ToolbarItems>
             <ToolbarItem x:Name="saveStudent" Text="save"/>
     </ContentPage.ToolbarItems>
-    <StackLayout Padding="20" Orientation="Vertical">
+    <ScrollView>
+        <StackLayout Padding="20" Orientation="Vertical">
 
-        <StackLayout HeightRequest="150" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" >
-          <Image MinimumWidthRequest="100" Source="user.png"/>
-        </StackLayout>
-        <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" >
-          <Label Text="Cne :"/>
-          <Entry Style="{StaticResource textfieldStyle}" Placeholder="enter student's CNE" />
-        </StackLayout>
-  
-        <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" >
-          <Label Text="Last name :"/>
-          <Entry Style="{StaticResource textfieldStyle}" Placeholder="enter student's last name" />
-        </StackLayout>
-        <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" >
-          <Label Text="First name :"/>
-          <Entry Style="{StaticResource textfieldStyle}" Placeholder="enter student's first name" />
-        </StackLayout>
-        <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" >
-          <Label Text="email :"/>
-          <Entry Style="{StaticResource textfieldStyle}" Placeholder="enter student's email" />
-        </StackLayout>
-        
-        <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" >
-          <Label Text="option :"/>
+            <StackLayout HeightRequest="150" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" >
+                <Image MinimumWidthRequest="100" Source="user.png"/>
+            </StackLayout>
+            <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" >
+                <Label Text="Cne :"/>
+                <Entry Style="{StaticResource textfieldStyle}" Placeholder="enter student's CNE" />
+            </StackLayout>
+
+            <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" >
+                <Label Text="Last name :"/>
+                <Entry Style="{StaticResource textfieldStyle}" Placeholder="enter student's last name" />
+            </StackLayout>
+            <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" >
+                <Label Text="First name :"/>
+                <Entry Style="{StaticResource textfieldStyle}" Placeholder="enter student's first name" />
+            </StackLayout>
+            <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" >
+                <Label Text="email :"/>
+                <Entry Style="{StaticResource textfieldStyle}" Placeholder="enter student's email" />
+            </StackLayout>
+
+            <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" >
+                <Label Text="option :"/>
                 <Picker 
                     ItemsSource="{Binding Options}" 
                     ItemDisplayBinding="{Binding title}" 
@@ -43,7 +44,7 @@
                     Title="Choice">
                 </Picker>
 
+            </StackLayout>
         </StackLayout>
-
-    </StackLayout>
+    </ScrollView>
 </ContentPage>
