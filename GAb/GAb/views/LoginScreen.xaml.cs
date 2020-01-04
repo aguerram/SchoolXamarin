@@ -13,7 +13,7 @@ namespace GAb.views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LoginScreen : ContentPage
 	{
-		private LoginService loginService = new LoginService();
+		private Authservice loginService = new LoginService();
 		public LoginScreen()
 		{
 			InitializeComponent();

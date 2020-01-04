@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GAb.services
 {
-	class LoginService
+	class AuthService
 	{
 		private dao.TeacherDAO teacherDAO = new dao.TeacherDAO();
 		public async Task<bool> checkCredentials(String username,String password)
@@ -20,5 +20,5 @@ namespace GAb.services
 
 			return ok;
 		}
-	}
+    }
 }
