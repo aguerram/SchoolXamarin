@@ -7,10 +7,13 @@ namespace GAb.views
 {
     public partial class AddStudentScreen : ContentPage
     {
+        OptionsViewModel optionsViewModel;
+
         public AddStudentScreen()
         {
             InitializeComponent();
-            BindingContext = new OptionsViewModel();
+            optionsViewModel = new OptionsViewModel();
+            BindingContext = optionsViewModel;
         }
 
     }

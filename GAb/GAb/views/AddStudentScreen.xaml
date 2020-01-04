@@ -35,18 +35,14 @@
         
         <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" >
           <Label Text="option :"/>
-          <Picker x:Name="myPicker"
-                  ItemsSource="{Binding options}"
-                  Title="options" >
-          </Picker>
-          <Picker Title="Select an option" 
-                    ItemDisplayBinding="{Binding title}"
-                    SelectedItem="{Binding SelectedOption}" >
-                  <Picker.ItemsSource>
-                            <x:Binding Source="{Binding Options}">
-                            </x:Binding>
-                  </Picker.ItemsSource>
-          </Picker>
+                <Picker 
+                    ItemsSource="{Binding Options}" 
+                    ItemDisplayBinding="{Binding title}" 
+                    Grid.Row="1" 
+                    Grid.Column="0" 
+                    Title="Choice">
+                </Picker>
+
         </StackLayout>
 
     </StackLayout>

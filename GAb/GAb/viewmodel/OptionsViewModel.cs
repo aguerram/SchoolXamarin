@@ -1,44 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using GAb.models;
+using GAb.services;
 
 namespace GAb.viewmodel
 {
-<<<<<<< HEAD
-    class OptionsViewModel:ViewModelBase
-    {
-=======
+
     class OptionsViewModel : BaseViewModel
     {
+        StudentService studentService;
+        public List<Option> Options { get; set; }
 
->>>>>>> 586be253f16d36b7a3dfba3d5648ae1a8ac8e7a9
-        public ObservableCollection<Option> Options { get; set; }
 
-		public OptionsViewModel()
+        public OptionsViewModel()
         {
-            Options = new ObservableCollection<Option>();
-
-            Options.Add(new Option("G.INFO"));
-            Options.Add(new Option("GTR +"));
+            fillOptions();
         }
-
-<<<<<<< HEAD
-        Option selectedOption;
-        public Option SelectedOption
+        public async Task<int> fillOptions()
         {
-            get { return selectedOption; }
-            set
-            {
-                if (selectedOption != value)
-                {
-                    selectedOption = value;
-                    OnPropertyChanged();
-                }
-            }
+            this.Options = await studentService.GetOptions();
+            return 1;
         }
-
-=======
->>>>>>> 586be253f16d36b7a3dfba3d5648ae1a8ac8e7a9
     }
 }
