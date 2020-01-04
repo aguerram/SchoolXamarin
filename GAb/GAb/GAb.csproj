@@ -23,7 +23,4 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="viewmodel\ViewModelBase.cs" />
-  </ItemGroup>
 </Project>
