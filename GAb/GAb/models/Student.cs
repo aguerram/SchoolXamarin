@@ -18,5 +18,18 @@ namespace GAb.models
 		public String phone { set; get; }
 		
 		public int optionID { set; get; }
+
+		public Student(string f_name, string l_name, string email, string phone, int optionID)
+		{
+			this.f_name = f_name;
+			this.l_name = l_name;
+			this.email = email;
+			this.phone = phone;
+			this.optionID = optionID;
+		}
+
+		public Student()
+		{
+		}
 	}
 }

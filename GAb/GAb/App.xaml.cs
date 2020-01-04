@@ -18,7 +18,8 @@ namespace GAb
             {
                 MainPage = new NavigationPage(new views.HomeScreen());
             }
-        }
+        
+		}
 
 		protected override void OnStart()
 		{
