@@ -24,10 +24,10 @@ namespace GAb.viewmodel
         }
         public void InstanciateOptions()
         {
-            OptionData.Add(new Option(1,"Genie informatique"));
-            OptionData.Add(new Option(2, "Genie telecome et reseaux"));
-            OptionData.Add(new Option(3, "Genie industriel"));
-            OptionData.Add("Genie procedés");
+            OptionData.Add(new Option("Genie informatique"));
+            OptionData.Add(new Option("Genie telecome et reseaux"));
+            OptionData.Add(new Option("Genie industriel"));
+            OptionData.Add(new Option("Genie procedés"));
         }
     }
 }
