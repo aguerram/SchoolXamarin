@@ -12,9 +12,9 @@ namespace GAb.services
         {
             studentDAO = new StudentDAO();
         }
-        public async Task<List<models.Option>> GetOptions()
+        public Task<List<models.Option>> GetOptions()
         {
-            return await studentDAO.ListAsync();
+            return studentDAO.ListAsync();
         }
     }
 }
