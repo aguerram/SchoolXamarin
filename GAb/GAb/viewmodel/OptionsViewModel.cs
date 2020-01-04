@@ -8,7 +8,6 @@ namespace GAb.viewmodel
     {
         List<Option> OptionData = new List<Option>();
         public IList<Option> Options { get { return OptionData; } }
-
         Option selectedOption;
         public Option SelectedOption
         {
