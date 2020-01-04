@@ -16,7 +16,11 @@ namespace GAb.views
         {
             Navigation.PushAsync(new AddStudentScreen());
         }
+		private void NavigateToAbsenceScreen(object sender, EventArgs e)
+		{
+			Navigation.PushAsync(new AbsencePage());
+		}
 
-    }
+	}
 
 }
