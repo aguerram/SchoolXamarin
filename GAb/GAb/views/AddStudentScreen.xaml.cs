@@ -13,7 +13,6 @@ namespace GAb.views
         {
             InitializeComponent();
             optionsViewModel = new OptionsViewModel();
-            optionsViewModel.fillOptions();
             BindingContext = optionsViewModel;
         }
 

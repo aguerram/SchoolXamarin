@@ -1,4 +1,5 @@
-﻿using GAb.models;
+﻿using GAb.dao;
+using GAb.models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,6 +9,8 @@ namespace GAb.viewmodel
 {
 	class StudentListViewModel: BaseViewModel
 	{
+		OptionDAO optionDAO = new OptionDAO();
+
 		public ObservableCollection<StudentListItem> Students { get; set; }
 		public List<Option> Options { get; set; }
 		public List<Lesson> Lessons { get; set; }
@@ -18,23 +21,27 @@ namespace GAb.viewmodel
 			Options = new List<Option>();
 			Lessons = new List<Lesson>();
 
-			Options.Add(new Option("G.INFO"));
-			Options.Add(new Option("GTR +"));
+			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
+			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
+			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
+			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
+			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
+			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
+			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
+			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
+			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
+			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
+			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
+			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
+			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
+			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
 
-			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
-			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
-			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
-			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
-			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
-			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
-			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
-			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
-			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
-			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
-			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
-			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
-			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
-			Students.Add(new StudentListItem(new Student("mostafa", "agueram", "a@a.a", "0652323232", 1)));
+			init();
+
+		}
+		public async void init()
+		{
+			Options = await optionDAO.ListAsync();
 		}
 	}
 	class StudentListItem : Student
