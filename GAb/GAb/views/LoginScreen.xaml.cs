@@ -13,7 +13,7 @@ namespace GAb.views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LoginScreen : ContentPage
 	{
-		private Authservice loginService = new LoginService();
+		private Authservice authservice = new Authservice();
 		public LoginScreen()
 		{
 			InitializeComponent();
@@ -27,7 +27,7 @@ namespace GAb.views
 			bool valid = false;
 			String username = usernameEntry.Text;
 			String password = passwordEntry.Text;
-			valid = await loginService.checkCredentials(username, password);
+			valid = await authservice.checkCredentials(username, password);
 			if(valid)
 			{
 				DisplayAlert("Success", "Welcome " + usernameEntry.Text, "Okay");
