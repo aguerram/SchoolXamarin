@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GAb.services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,15 +13,28 @@ namespace GAb.views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LoginScreen : ContentPage
 	{
+		private LoginService loginService = new LoginService();
 		public LoginScreen()
 		{
 			InitializeComponent();
 		}
 
 		//Login button
-		private void Button_Clicked(object sender, EventArgs e)
+		private async void Button_Clicked(object sender, EventArgs e)
 		{
-			DisplayAlert("success", "sds","Ok");
+			bool valid = false;
+			String username = usernameEntry.Text;
+			String password = passwordEntry.Text;
+			valid = await loginService.checkCredentials(username, password);
+			if(valid)
+			{
+				DisplayAlert("Success", "Welcome " + usernameEntry.Text, "Okay");
+			}
+			else
+			{
+				DisplayAlert("Login failed", "Username or password are incorrect", "Close");
+				passwordEntry.Text = "";
+			}
 		}
 
 		//Signup button

@@ -10,8 +10,8 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Margin="10,10,10,0" VerticalOptions="Center" >
-            <Entry x:Name="username" Placeholder="Username"/>
-            <Entry x:Name="password" Placeholder="Password"/>
+            <Entry x:Name="usernameEntry" Placeholder="Username"/>
+            <Entry x:Name="passwordEntry" IsPassword="True" Placeholder="Password"/>
             <FlexLayout HorizontalOptions="Center"  FlowDirection="LeftToRight" >
                 <Button Clicked="Button_Clicked" Text="Login"/>
                 <Button Clicked="Button_Clicked_1" Text="Signup"/>
