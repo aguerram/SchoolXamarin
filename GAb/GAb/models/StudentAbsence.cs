@@ -15,5 +15,16 @@ namespace GAb.models
 
 		public bool absent { set; get; }
 
+		public StudentAbsence(DateTime date, int studentID, int lessonID, bool absent)
+		{
+			this.date = date;
+			this.studentID = studentID;
+			this.lessonID = lessonID;
+			this.absent = absent;
+		}
+
+		public StudentAbsence()
+		{
+		}
 	}
 }

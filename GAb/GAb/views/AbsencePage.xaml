@@ -5,12 +5,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="GAb.views.AbsencePage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" Clicked="SaveAbsence"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Margin="10,10,10,0">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="16"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="64"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -18,10 +21,11 @@
                 </Grid.ColumnDefinitions>
                 <Label Text="Choice" Grid.Row="0" Grid.Column="0" />
                 <Picker Grid.Row="1" Grid.Column="0" Title="Choice">
-                    <Picker.Items>
-                        <x:String>G.INFO</x:String>
-                        <x:String>GTR</x:String>
-                    </Picker.Items>
+                    <Picker.ItemsSource>
+                        <x:Binding Source="{Binding Options}">
+                            
+                        </x:Binding>
+                    </Picker.ItemsSource>
                 </Picker>
 
                 <Label Text="Lesson" Grid.Row="0" Grid.Column="1" />
@@ -32,21 +36,21 @@
                     </Picker.Items>
                 </Picker>
             </Grid>
-            <ListView x:Name="studentsListView">
+            <ListView SelectionMode="None" x:Name="studentsListView" ItemsSource="{Binding Students}">
                 <ListView.Header>
                     List of studens
                 </ListView.Header>
-                <ListView.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Baboon</x:String>
-                        <x:String>Capuchin Monkey</x:String>
-                        <x:String>Blue Monkey</x:String>
-                        <x:String>Squirrel Monkey</x:String>
-                        <x:String>Golden Lion Tamarin</x:String>
-                        <x:String>Howler Monkey</x:String>
-                        <x:String>Japanese Macaque</x:String>
-                    </x:Array>
-                </ListView.ItemsSource>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <FlexLayout HorizontalOptions="FillAndExpand" AlignItems="Center" JustifyContent="SpaceBetween">
+                                <Label Text="{Binding fullName}" VerticalOptions="Center"/>
+                                <CheckBox CheckedChanged="CheckBox_CheckedChanged" IsChecked="{Binding check}" VerticalOptions="Center"/>
+                            </FlexLayout>
+                            
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
     </ContentPage.Content>

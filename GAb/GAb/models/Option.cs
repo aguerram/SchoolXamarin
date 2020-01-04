@@ -10,5 +10,15 @@ namespace GAb.models
 		[AutoIncrement, PrimaryKey]
 		public int ID { set; get; }
 		public String title { set; get; }
+
+		public Option(string title)
+		{
+			this.title = title;
+		}
+
+		public Option()
+		{
+		}
 	}
+
 }

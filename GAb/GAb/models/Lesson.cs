@@ -12,5 +12,16 @@ namespace GAb.models
 
 		public int teacherID { set; get; }
 		public int optionID { set; get; }
+
+		public Lesson(string title, int teacherID, int optionID)
+		{
+			this.title = title;
+			this.teacherID = teacherID;
+			this.optionID = optionID;
+		}
+
+		public Lesson()
+		{
+		}
 	}
 }

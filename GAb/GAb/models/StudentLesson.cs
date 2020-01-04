@@ -10,5 +10,15 @@ namespace GAb.models
 		public int ID { set; get; }
 		public int studentID { set; get; }
 		public int lessonID { set; get; }
+
+		public StudentLesson(int studentID, int lessonID)
+		{
+			this.studentID = studentID;
+			this.lessonID = lessonID;
+		}
+
+		public StudentLesson()
+		{
+		}
 	}
 }

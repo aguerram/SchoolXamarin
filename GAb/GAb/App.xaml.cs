@@ -9,7 +9,7 @@ namespace GAb
 		public App()
 		{
 			InitializeComponent();
-			MainPage = new NavigationPage(new views.LoginScreen());
+			MainPage = new NavigationPage(new views.AbsencePage());
 		}
 
 		protected override void OnStart()
