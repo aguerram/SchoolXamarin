@@ -1,33 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using GAb.models;
 
 namespace GAb.viewmodel
 {
-    public class OptionsViewModel:BaseViewModel
+    public class OptionsViewModel : BaseViewModel
     {
-        List<Option> OptionData = new List<Option>();
-        public IList<Option> Options { get { return OptionData; } }
+        private ObservableCollection<Option> options;
 
-        Option selectedOption;
-        public Option SelectedOption
+        public ObservableCollection<Option> Options { get => options; set => options = value; }
+
+        public OptionsViewModel()
         {
-            get { return SelectedOption; }
-            set
-            {
-                if (SelectedOption != value)
-                {
-                    SelectedOption = value;
-                    OnPropertyChanged();
-                }
-            }
+            Options = new ObservableCollection<Option>();
+
+            Options.Add(new Option("G.INFO"));
+            Options.Add(new Option("GTR +"));
+
         }
-        public void InstanciateOptions()
-        {
-            OptionData.Add(new Option("Genie informatique"));
-            OptionData.Add(new Option("Genie telecome et reseaux"));
-            OptionData.Add(new Option("Genie industriel"));
-            OptionData.Add(new Option("Genie procedés"));
-        }
+
+
+        //Option selectedOption;
+        //public Option SelectedOption
+        //{
+        //    get { return SelectedOption; }
+        //    set
+        //    {
+        //        if (SelectedOption != value)
+        //        {
+        //            SelectedOption = value;
+        //            OnPropertyChanged();
+        //        }
+        //    }
+        //}
+        //public void InstanciateOptions()
+        //{
+        //    OptionData.Add(new Option("Genie informatique"));
+        //    OptionData.Add(new Option("Genie telecome et reseaux"));
+        //    OptionData.Add(new Option("Genie industriel"));
+        //    OptionData.Add(new Option("Genie procedés"));
+        //}
     }
 }
