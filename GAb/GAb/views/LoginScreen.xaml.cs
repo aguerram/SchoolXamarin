@@ -30,11 +30,12 @@ namespace GAb.views
 			valid = await loginService.checkCredentials(username, password);
 			if(valid)
 			{
-				DisplayAlert("Success", "Welcome " + usernameEntry.Text, "Okay");
+                //DisplayAlert("Success", "Welcome " + usernameEntry.Text, "Okay");
+                await Navigation.PushAsync(new HomeScreen());
 			}
 			else
 			{
-				DisplayAlert("Login failed", "Username or password are incorrect", "Close");
+				await DisplayAlert("Login failed", "Username or password are incorrect", "Close");
 				passwordEntry.Text = "";
 			}
 		}

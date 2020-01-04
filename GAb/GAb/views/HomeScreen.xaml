@@ -22,12 +22,14 @@
             <Image Source="clipboard1.png"/>
         </StackLayout>
         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-            <Button Text="Add student" Style="{StaticResource buttonStyle}"/>
+            <Button Clicked="NavigateToAddStudentScreen" Text="Add student" Style="{StaticResource buttonStyle}"/>
             <Image Source="plus.png"/>
         </StackLayout>
         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
             <Button Text="New lesson" Style="{StaticResource buttonStyle}"/>
-            <Image Source="book.png"/>
+            <StackLayout  Orientation="Horizontal" WidthRequest="30"  HeightRequest="1" Grid.Column="0">
+                <Image Aspect="Fill" Source="book.png"/>
+            </StackLayout>
         </StackLayout>
         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
             <Button Text="Search" Style="{StaticResource buttonStyle}"/>

@@ -21,7 +21,7 @@ namespace GAb.services
 			return ok;
 		}
 
-        public async Task<bool> findByUsername(String username)
+        private async Task<bool> findByUsername(String username)
         {
             bool ok = false;
             Teacher res = await teacherDAO.GetByUsernameAsync(username);

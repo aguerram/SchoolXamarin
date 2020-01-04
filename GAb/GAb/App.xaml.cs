@@ -4,13 +4,21 @@ using Xamarin.Forms.Xaml;
 
 namespace GAb
 {
-	public partial class App : Application
+    public partial class App : Application
 	{
-		public App()
+        public static bool IsUserLoggedIn { get; set; }
+        public App()
 		{
 			InitializeComponent();
-			MainPage = new NavigationPage(new views.LoginScreen());
-		}
+            if (!IsUserLoggedIn)
+            {
+                MainPage = new NavigationPage(new views.LoginScreen());
+            }
+            else
+            {
+                MainPage = new NavigationPage(new views.HomeScreen());
+            }
+        }
 
 		protected override void OnStart()
 		{

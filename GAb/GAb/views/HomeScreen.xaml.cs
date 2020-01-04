@@ -11,5 +11,12 @@ namespace GAb.views
         {
             InitializeComponent();
         }
+        
+        private void NavigateToAddStudentScreen(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AddStudentScreen());
+        }
+
     }
+
 }
