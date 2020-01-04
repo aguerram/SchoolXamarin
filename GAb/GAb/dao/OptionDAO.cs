@@ -17,17 +17,18 @@ namespace GAb.dao
 			//create table from the model
 			_database.CreateTableAsync<models.Option>().Wait();
 
-			/*SaveAsync(new models.Option("G.INFO"));
-			SaveAsync(new models.Option("GTR"));
-			SaveAsync(new models.Option("GIndus"));
-			SaveAsync(new models.Option("GPMC"));*/
-		}
+            //SaveAsync(new models.Option("G.INFO"));
+            //SaveAsync(new models.Option("GTR"));
+            //SaveAsync(new models.Option("GIndus"));
+            //SaveAsync(new models.Option("GPMC"));
+            //_database.ExecuteAsync("Delete from Option;");
+        }
 		public Task<List<models.Option>> ListAsync()
 		{
 			return _database.Table<models.Option>().ToListAsync();
 		}
 
-		public Task<models.Option> GetByIdAsync(int id)
+        public Task<models.Option> GetByIdAsync(int id)
 		{
 			return _database.Table<models.Option>()
 							.Where(i => i.ID == id)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using GAb.dao;
 using GAb.models;
@@ -12,18 +13,35 @@ namespace GAb.viewmodel
     class OptionsViewModel : BaseViewModel
     {
         public OptionDAO optionDAO;
-        public List<Option> Options { get; set; }
+        public List<Option> options;
 
 
         public OptionsViewModel()
         {
-			optionDAO = new OptionDAO();
-			Options = new List<Option>();
-			fillOptions();
+            Options = new List<Option>();
+            optionDAO = new OptionDAO();
+            fillOptions();
         }
+        public List<Option> Options
+        {
+            get { return options; }
+            private set
+            {
+                options = value;
+                OnPropertyChanged();
+            }
+        }
+
         public async void fillOptions()
         {
-			this.Options = await optionDAO.ListAsync();
+            this.Options = await optionDAO.ListAsync();
+            Debug.Write("****************" +Options.Count);
+            foreach (Option o in Options)
+            {
+                Debug.Write(o.title);
+            }
+            Debug.Write("**********************************************");
+
         }
 		
     }

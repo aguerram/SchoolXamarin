@@ -18,26 +18,26 @@ namespace GAb.dao
             //create table from the model
             _database.CreateTableAsync<models.Option>().Wait();
         }
-        public Task<List<models.Option>> ListAsync()
+        public Task<List<models.Student>> ListAsync()
         {
-            return _database.Table<models.Option>().ToListAsync();
+            return _database.Table<models.Student>().ToListAsync();
         }
 
-        public Task<models.Option> GetByIdAsync(int id)
+        public Task<models.Student> GetByIdAsync(int id)
         {
-            return _database.Table<models.Option>()
+            return _database.Table<models.Student>()
                             .Where(i => i.ID == id)
                             .FirstOrDefaultAsync();
         }
-        public Task<models.Option> GetByUsernameAsync(string title)
+        public Task<models.Student> GetByUsernameAsync(string firstname)
         {
-            return _database.Table<models.Option>()
-                            .Where(i => i.title == title)
+            return _database.Table<models.Student>()
+                            .Where(i => i.f_name == firstname)
                             .FirstOrDefaultAsync();
         }
 
 
-        public Task<int> SaveAsync(models.Option v)
+        public Task<int> SaveAsync(models.Student v)
         {
             if (v.ID != 0)
             {
@@ -49,7 +49,7 @@ namespace GAb.dao
             }
         }
 
-        public Task<int> DeleteAsync(models.Option v)
+        public Task<int> DeleteAsync(models.Student v)
         {
             return _database.DeleteAsync(v);
         }

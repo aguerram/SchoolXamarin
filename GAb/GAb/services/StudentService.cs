@@ -7,12 +7,12 @@ namespace GAb.services
 {
     class StudentService
     {
-        StudentDAO studentDAO;
+        public StudentDAO studentDAO;
         public StudentService()
         {
             studentDAO = new StudentDAO();
         }
-        public Task<List<models.Option>> GetOptions()
+        public Task<List<models.Student>> GetOptions()
         {
             return studentDAO.ListAsync();
         }
