@@ -110,34 +110,90 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\user.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\user.imageset\user.png" />
-    <ImageAsset Include="Assets.xcassets\user.imageset\user-1.png" />
-    <ImageAsset Include="Assets.xcassets\user.imageset\user-2.png" />
-    <ImageAsset Include="Assets.xcassets\user.imageset\user-3.png" />
-    <ImageAsset Include="Assets.xcassets\user.imageset\user-4.png" />
-    <ImageAsset Include="Assets.xcassets\clipboard1.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\clipboard1.imageset\clipboard.png" />
-    <ImageAsset Include="Assets.xcassets\clipboard1.imageset\clipboard-1.png" />
-    <ImageAsset Include="Assets.xcassets\clipboard1.imageset\clipboard-2.png" />
-    <ImageAsset Include="Assets.xcassets\clipboard1.imageset\clipboard-3.png" />
-    <ImageAsset Include="Assets.xcassets\loupe.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\loupe.imageset\loupe.png" />
-    <ImageAsset Include="Assets.xcassets\loupe.imageset\loupe-1.png" />
-    <ImageAsset Include="Assets.xcassets\loupe.imageset\loupe-2.png" />
-    <ImageAsset Include="Assets.xcassets\loupe.imageset\loupe-3.png" />
-    <ImageAsset Include="Assets.xcassets\plus.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\plus.imageset\plus %282%29.png" />
-    <ImageAsset Include="Assets.xcassets\plus.imageset\plus %282%29-1.png" />
-    <ImageAsset Include="Assets.xcassets\plus.imageset\plus %282%29-2.png" />
-    <ImageAsset Include="Assets.xcassets\plus.imageset\plus %282%29-3.png" />
-    <ImageAsset Include="Assets.xcassets\logout.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\book.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\logout.imageset\logout.png" />
-    <ImageAsset Include="Assets.xcassets\logout.imageset\logout-1.png" />
-    <ImageAsset Include="Assets.xcassets\logout.imageset\logout-2.png" />
-    <ImageAsset Include="Assets.xcassets\logout.imageset\logout-3.png" />
-    <ImageAsset Include="Assets.xcassets\book.imageset\book.png" />
+    <ImageAsset Include="Assets.xcassets\user.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\user.imageset\user.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\user.imageset\user-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\user.imageset\user-2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\user.imageset\user-3.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\user.imageset\user-4.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\clipboard1.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\clipboard1.imageset\clipboard.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\clipboard1.imageset\clipboard-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\clipboard1.imageset\clipboard-2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\clipboard1.imageset\clipboard-3.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\loupe.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\loupe.imageset\loupe.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\loupe.imageset\loupe-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\loupe.imageset\loupe-2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\loupe.imageset\loupe-3.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\plus.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\plus.imageset\plus %282%29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\plus.imageset\plus %282%29-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\plus.imageset\plus %282%29-2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\plus.imageset\plus %282%29-3.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\logout.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\book.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\logout.imageset\logout.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\logout.imageset\logout-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\logout.imageset\logout-2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\logout.imageset\logout-3.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\book.imageset\book.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
