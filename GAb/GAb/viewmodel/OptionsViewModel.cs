@@ -5,11 +5,9 @@ using GAb.models;
 
 namespace GAb.viewmodel
 {
-    public class OptionsViewModel : BaseViewModel
+    class OptionsViewModel:ViewModelBase
     {
-        private ObservableCollection<Option> options;
-
-        public ObservableCollection<Option> Options { get => options; set => options = value; }
+        public ObservableCollection<Option> Options { get; set; }
 
         public OptionsViewModel()
         {
@@ -17,29 +15,21 @@ namespace GAb.viewmodel
 
             Options.Add(new Option("G.INFO"));
             Options.Add(new Option("GTR +"));
-
         }
 
+        Option selectedOption;
+        public Option SelectedOption
+        {
+            get { return selectedOption; }
+            set
+            {
+                if (selectedOption != value)
+                {
+                    selectedOption = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
 
-        //Option selectedOption;
-        //public Option SelectedOption
-        //{
-        //    get { return SelectedOption; }
-        //    set
-        //    {
-        //        if (SelectedOption != value)
-        //        {
-        //            SelectedOption = value;
-        //            OnPropertyChanged();
-        //        }
-        //    }
-        //}
-        //public void InstanciateOptions()
-        //{
-        //    OptionData.Add(new Option("Genie informatique"));
-        //    OptionData.Add(new Option("Genie telecome et reseaux"));
-        //    OptionData.Add(new Option("Genie industriel"));
-        //    OptionData.Add(new Option("Genie procedés"));
-        //}
     }
 }
