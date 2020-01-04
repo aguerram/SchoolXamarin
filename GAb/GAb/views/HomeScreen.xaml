@@ -18,7 +18,7 @@
           <Image MinimumWidthRequest="1000" Source="user.png"/>
         </StackLayout>
         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-            <Button Text="Abscence" Style="{StaticResource buttonStyle}"/>
+            <Button Clicked="NavigateToAbsenceScreen" Text="Abscence" Style="{StaticResource buttonStyle}"/>
             <Image Source="clipboard1.png"/>
         </StackLayout>
         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
