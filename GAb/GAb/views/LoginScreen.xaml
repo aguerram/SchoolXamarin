@@ -5,11 +5,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="GAb.views.LoginScreen">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Signup" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="10,10,10,0" VerticalOptions="Center" >
+            <Entry x:Name="username" Placeholder="Username"/>
+            <Entry x:Name="password" Placeholder="Password"/>
+            <FlexLayout HorizontalOptions="Center"  FlowDirection="LeftToRight" >
+                <Button Clicked="Button_Clicked" Text="Login"/>
+                <Button Clicked="Button_Clicked_1" Text="Signup"/>
+            </FlexLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

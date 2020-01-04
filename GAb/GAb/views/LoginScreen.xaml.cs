@@ -16,5 +16,17 @@ namespace GAb.views
 		{
 			InitializeComponent();
 		}
+
+		//Login button
+		private void Button_Clicked(object sender, EventArgs e)
+		{
+			DisplayAlert("success", "sds","Ok");
+		}
+
+		//Signup button
+		private void Button_Clicked_1(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
