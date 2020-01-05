@@ -191,17 +191,12 @@
     <ImageAsset Include="Assets.xcassets\logout.imageset\logout-3.png">
       <Visible>false</Visible>
     </ImageAsset>
-<<<<<<< HEAD
-    <ImageAsset Include="Assets.xcassets\book.imageset\book.png">
+    <ImageAsset Include="Assets.xcassets\book.imageset\online-class %281%29.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\book.imageset\book-1.png">
+    <ImageAsset Include="Assets.xcassets\book.imageset\online-class %281%29-1.png">
       <Visible>false</Visible>
     </ImageAsset>
-=======
-    <ImageAsset Include="Assets.xcassets\book.imageset\online-class %281%29.png" />
-    <ImageAsset Include="Assets.xcassets\book.imageset\online-class %281%29-1.png" />
->>>>>>> 03a7c80b2efe047dafdd0e47fa7616fa029db114
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
