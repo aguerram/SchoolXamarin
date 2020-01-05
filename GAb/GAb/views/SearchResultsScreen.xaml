@@ -8,14 +8,21 @@
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <Label Text="Absence results : "/>
-            <TableView x:Name="tableView" Intent="Settings">
-                <TableRoot>
-                    <TableSection Title="Ring">
-                        <SwitchCell Text="New Voice Mail" />
-                        <SwitchCell Text="New Mail" On="true" />
-                    </TableSection>
-                </TableRoot>
-            </TableView>
+            <ListView SelectionMode="None" x:Name="studentsListView" ItemsSource="{Binding Students}">
+                <ListView.Header>
+                    List of studens
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <FlexLayout HorizontalOptions="FillAndExpand" AlignItems="Center" JustifyContent="SpaceBetween">
+                                <Label Text="{Binding name}" VerticalOptions="Center"/>
+                            </FlexLayout>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

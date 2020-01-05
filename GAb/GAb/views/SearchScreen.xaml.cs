@@ -63,8 +63,7 @@ namespace GAb.views
 		private async void search()
 		{
 			var list = await studentDao.GetByNameAsync(nameEntry.Text.Trim());
-			var screen = new SearchResultsScreen();
-			screen.StudentsList = list;
+			var screen = new SearchResultsScreen(list);
 			Navigation.PushModalAsync(screen);
 		}
 	}

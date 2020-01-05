@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GAb.models;
+using GAb.viewmodel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,12 +15,15 @@ namespace GAb.views
 	{
 		private List<Student> studentsList { get; set; }
 		public List<Student> StudentsList { get { return studentsList; } set { studentsList = value; } }
-		public SearchResultsScreen()
+
+		private SearchResultsViewModel sModel;
+		public SearchResultsScreen(List<Student> list)
 		{
 			InitializeComponent();
-			//listView.ItemsSource = studentsList ;
+			StudentsList = list;
+			sModel = new SearchResultsViewModel(list);
 
-			
+			BindingContext = sModel;
 		}
 	}
 }
