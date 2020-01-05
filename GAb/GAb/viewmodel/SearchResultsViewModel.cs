@@ -7,30 +7,43 @@ namespace GAb.viewmodel
 {
 	class SearchResultsViewModel:BaseViewModel
 	{
-		private List<StudentListItem> students { get; set; }
-		public List<StudentListItem> Students { get { return students; } set { students = value; OnPropertyChanged(); } }
+		private List<StudentListItemNew> students { get; set; }
+		public List<StudentListItemNew> Students { get { return students; } set { students = value; OnPropertyChanged(); } }
 		public SearchResultsViewModel(List<StudentAbsenceRelated> l)
 		{
-			students = new List<StudentListItem>();
-			Students = new List<StudentListItem>();
+			students = new List<StudentListItemNew>();
+			Students = new List<StudentListItemNew>();
 			foreach (StudentAbsenceRelated el in l)
 			{
-				Students.Add(new StudentListItem(el.studen));
+				var tAbsence = 0;
+				var tPresence = 0;
+				foreach(StudentAbsence a in el.absenceList)
+				{
+					if (a.absent)
+						tAbsence++;
+					else
+					{
+						tPresence++;
+					}
+				}
+				Students.Add(new StudentListItemNew(el.studen, tAbsence, tPresence));
 			}
 		}
 	}
-	class StudentListItem : Student
+	class StudentListItemNew : Student
 	{
 		public String fullName { set; get; }
 		public bool check { set; get; }
 
-		public int totalPresence = 0;
-		public int totalAbsence = 0;
+		public int totalPresence { set; get; }
+		public int totalAbsence  { set; get; }
 		public Student s { get; set; }
-		public StudentListItem(Student s) : base(s.f_name, s.l_name, s.email, s.phone, s.optionID)
+		public StudentListItemNew(Student s, int tAbsence, int tPresence) : base(s.f_name, s.l_name, s.email, s.phone, s.optionID)
 		{
 			this.s = s;
-			fullName = f_name + " " + l_name;
+			totalPresence = tPresence;
+			totalAbsence = tAbsence;
+			fullName = f_name + " " + l_name + " ";
 			check = false;
 		}
 	}

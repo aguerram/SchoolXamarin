@@ -64,7 +64,7 @@ namespace GAb.views
 
 		private async void search()
 		{
-			var list = await studentDao.GetByNameAsync(nameEntry.Text.Trim());
+			var list = await studentDao.GetByNameAsync(nameEntry.Text.Trim().ToLower());
 			List<StudentAbsenceRelated> finalList = new List<StudentAbsenceRelated>();
 			if(list.Count > 0)
 			{

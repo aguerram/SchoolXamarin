@@ -10,13 +10,15 @@
             <Label Text="Absence results : "/>
             <ListView SelectionMode="None" x:Name="studentsListView" ItemsSource="{Binding Students}">
                 <ListView.Header>
-                    List of studens
+                    List of students
                 </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <FlexLayout HorizontalOptions="FillAndExpand" AlignItems="Center" JustifyContent="SpaceBetween">
                                 <Label Text="{Binding fullName}" VerticalOptions="Center"/>
+                                <Label Text="{Binding totalPresence}" VerticalOptions="Center"/>
+                                <Label Text="{Binding totalAbsence}" VerticalOptions="Center"/>
                             </FlexLayout>
 
                         </ViewCell>

@@ -32,7 +32,7 @@ namespace GAb.dao
         public Task<List<models.Student>> GetByNameAsync(string name)
         {
 			return _database.Table<models.Student>()
-							.Where(i => i.f_name.Equals(name) || i.l_name.Equals(name))
+							.Where(i => i.f_name.ToLower().Equals(name) || i.l_name.ToLower().Equals(name))
 							.ToListAsync();
         }
 
