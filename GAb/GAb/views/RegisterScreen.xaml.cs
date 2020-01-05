@@ -13,7 +13,13 @@ namespace GAb.views
         {
             InitializeComponent();
         }
-        //Signup button
+
+        public void emptyInputs(Entry username,Entry password,Entry repassword)
+        {
+            username.Text = string.Empty;
+            password.Text = string.Empty;
+            retyped_password.Text = string.Empty;
+        }
         private async void Button_Clicked_1(object sender, EventArgs e)
         {
             bool valid = false;
@@ -35,14 +41,15 @@ namespace GAb.views
             valid = await authService.createTeacher(usernameS, passwordS);
             if (valid)
             {
+                emptyInputs(username, password, retyped_password);
                 await DisplayAlert("Success", "Please login to your account", "Okay");
+
                 await Navigation.PushAsync(new LoginScreen());
             }
             else
             {
                 await DisplayAlert("Failed", "A user with the same name already exists", "try again!");
                 username.Text = string.Empty;
-
             }
         }
     }

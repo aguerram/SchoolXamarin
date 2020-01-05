@@ -5,41 +5,48 @@
             <Style x:Key="buttonStyle" TargetType="Button">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
-                <Setter Property="BorderColor" Value="Black" />
+                <Setter Property="BorderColor" Value="SteelBlue" />
                 <Setter Property="BorderRadius" Value="5" />
                 <Setter Property="BorderWidth" Value="1" />
-                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="WidthRequest" Value="150" />
+                <Setter Property="HeightRequest" Value="150" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+            <Style x:Key="logout" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="BorderColor" Value="SteelBlue" />
+                <Setter Property="BorderRadius" Value="5" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="WidthRequest" Value="300" />
+                <Setter Property="HeightRequest" Value="100" />
                 <Setter Property="TextColor" Value="Black" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="Logout" Text="logout" />
+    </ContentPage.ToolbarItems>
     <ScrollView>
         <StackLayout Spacing="30" Padding="10">
             <StackLayout HeightRequest="150" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" >
                 <Image MinimumWidthRequest="1000" Source="user.png"/>
             </StackLayout>
-            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                <Button Clicked="NavigateToAbsenceScreen" Text="Abscence" Style="{StaticResource buttonStyle}"/>
-                <Image Source="clipboard1.png"/>
+            <StackLayout HorizontalOptions="Center" HeightRequest="10" Spacing="0">
+                <Label Text="" x:Name="teacherName"/>
             </StackLayout>
-            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                <Button Clicked="NavigateToAddStudentScreen" Text="Add student" Style="{StaticResource buttonStyle}"/>
-                <Image Source="plus.png"/>
+            <StackLayout Margin="0,50,0,0" Spacing="20" HorizontalOptions="Center" Orientation="Horizontal">
+                    <Button ImageSource="clipboard1.png" Clicked="NavigateToAbsenceScreen" Text="Absceasance" Style="{StaticResource buttonStyle}"/>
+                    <Button Clicked="NavigateToSearchScreen" ImageSource="loupe.png" Text="Search" Style="{StaticResource buttonStyle}"/>
             </StackLayout>
-            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                <Button Clicked="NavigatToAddNewLesson" Text="New lesson" Style="{StaticResource buttonStyle}"/>
-                <StackLayout  Orientation="Horizontal" WidthRequest="30"  HeightRequest="10" Grid.Column="0">
-                    <Image Aspect="AspectFit" Source="book.png"/>
-                </StackLayout>
+            <StackLayout Spacing="20" HorizontalOptions="Center" Orientation="Horizontal">
+                <Button ImageSource="plus.png" Clicked="NavigateToAddStudentScreen" Text="Add student" Style="{StaticResource buttonStyle}"/>
+                <Button ImageSource="book.png" Clicked="NavigatToAddNewLesson" Text="New lesson" Style="{StaticResource buttonStyle}"/>
             </StackLayout>
-            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                <Button Text="Search" Style="{StaticResource buttonStyle}"/>
-                <Image Source="loupe.png"/>
-            </StackLayout>
-            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                <Button Clicked="Logout" Text="Logout" Style="{StaticResource buttonStyle}"/>
-                <Image Source="logout.png"/>
-            </StackLayout>
+            <!--<StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                <Button ImageSource="logout.png" Clicked="Logout" Text="Logout" Style="{StaticResource logout}"/>
+            </StackLayout>-->
+
         </StackLayout>
     </ScrollView>
 </ContentPage>

@@ -2,6 +2,7 @@
 using GAb.services;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,14 +31,23 @@ namespace GAb.views
 			bool valid = false;
 			String username = usernameEntry.Text;
 			String password = passwordEntry.Text;
+            Debug.WriteLine(password);
 			valid = await loginService.checkCredentials(username, password);
             Teacher teacher = await loginService.getCurrentTeacher(username, password);
+
 			if(valid)
 			{
                 //DisplayAlert("Success", "Welcome " + usernameEntry.Text, "Okay");
                 await Navigation.PushAsync(new HomeScreen());
                 App.IsUserLoggedIn = true;
                 App.currentTeacher = teacher;
+                Debug.WriteLine("null");
+                if (teacher != null)
+                {
+                    Debug.WriteLine("not null");
+                    SharedPreferences.teacher = teacher;
+                    SharedPreferences.isLoggedIn = true;
+                }
 			}
 			else
 			{
