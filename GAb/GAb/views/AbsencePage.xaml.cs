@@ -1,4 +1,6 @@
-﻿using GAb.viewmodel;
+﻿using GAb.dao;
+using GAb.models;
+using GAb.viewmodel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +16,7 @@ namespace GAb.views
 	public partial class AbsencePage : ContentPage
 	{
 		StudentListViewModel studentListViewModel;
+		StudentAbsenceDAO absenceDAO = new StudentAbsenceDAO();
 		public AbsencePage()
 		{
 			InitializeComponent();
@@ -35,9 +38,14 @@ namespace GAb.views
 
 			foreach (StudentListItem itm in studentListViewModel.Students)
 			{
-				if (itm.check)
-					absentStudent++;
+				//absenceDAO.saveAsync(itm);
 			}
+		}
+		private void choiceChanges(object sender, EventArgs e)
+		{
+			Picker picker = (Picker)sender;
+			Option option = (Option)picker.SelectedItem;
+			studentListViewModel.selectByOption(option);
 		}
 	}
 }
