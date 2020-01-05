@@ -14,10 +14,8 @@ namespace GAb.views
             InitializeComponent();
             NavigationPage.SetHasBackButton(this, false);
             Debug.WriteLine(SharedPreferences.teacher.username);
-            //currentTeacher = App.currentTeacher;
-            //Debug.WriteLine(currentTeacher);
-            //String test = currentTeacher.ToString();
-            //teacherName.Text = String.Format("Welcome back Mr/Mrs {0}", test);
+            currentTeacher = App.currentTeacher;
+            teacherName.Text = String.Format("Welcome back Mr/Mrs {0}", currentTeacher.username);
         }
 
 
