@@ -19,6 +19,7 @@ namespace GAb.views
 		public LoginScreen()
 		{
 			InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
             NavigationPage.SetHasBackButton(this, false);
         }
 
@@ -51,7 +52,8 @@ namespace GAb.views
             }
             else
 			{
-				await DisplayAlert("Login failed", "Username or password are incorrect", "Close");
+                PasswordError.Text = "Username or password are incorrect";
+                await DisplayAlert("Login failed", "Username or password are incorrect", "Close");
 				passwordEntry.Text = "";
                 App.IsUserLoggedIn = false;
 

@@ -4,9 +4,11 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="GAb.views.LoginScreen">
+             x:Class="GAb.views.LoginScreen"
+             BackgroundColor="#7698f3"
+             >
     <ContentPage.Resources>
-        <ResourceDictionary>
+          <ResourceDictionary>
             <Style x:Key="buttonStyle" TargetType="Button">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
@@ -18,7 +20,7 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <ContentPage.Content>
+    <!--<ContentPage.Content>
         <StackLayout Margin="10,10,10,0" VerticalOptions="Center" >
             <Label Text="Username : "/>
             <Entry  x:Name="usernameEntry" Placeholder="Username"/>
@@ -29,5 +31,124 @@
                 <Button Style="{StaticResource buttonStyle}"  Clicked="Button_Clicked_1" Text="Signup"/>
             </StackLayout>
         </StackLayout>
+    </ContentPage.Content>-->
+    <Shell.NavBarIsVisible>true</Shell.NavBarIsVisible>
+    <ContentPage.Content>
+        <Grid>
+            <AbsoluteLayout BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Padding="20">
+                    <StackLayout Padding="1" BackgroundColor="Transparent" Orientation="Horizontal">
+                        <Grid VerticalOptions="CenterAndExpand"
+              Padding="10"
+              HorizontalOptions="FillAndExpand"
+              BackgroundColor="Transparent">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="20" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="20" />
+                                <RowDefinition Height="0" />
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="25" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="white" FontSize="50" Text="Welcome back!" FontAttributes="Bold" />
+                            <!-- Email Grid -->
+                            <StackLayout Grid.Row="2" HeightRequest="65" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="Transparent"  >
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="55" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Entry BackgroundColor="Transparent"
+                                           TextColor="White"
+                                           PlaceholderColor="White"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Fill"
+                                           HeightRequest="50"
+                                           Placeholder="username"
+                                           x:Name="usernameEntry"
+                                           Grid.Column="0"
+                                           Grid.ColumnSpan="3"
+                                           />
+                                </Grid>
+                            </StackLayout>
+                            <Label FontAttributes="Bold" IsVisible="False" TextColor="IndianRed" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" />
+
+                            <StackLayout Grid.Row="4" HeightRequest="65" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="Transparent"  >
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="55" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+  
+                                    <Entry BackgroundColor="Transparent"
+                                           TextColor="White"
+                                           PlaceholderColor="White"
+                                           HeightRequest="50"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Fill"
+                                           Placeholder="Password"
+                                           x:Name="passwordEntry"
+                                           IsPassword="True"                                           
+                                           Grid.Column="0" Grid.ColumnSpan="3" />
+                                </Grid>
+                            </StackLayout>
+                            <Label x:Name="PasswordError" IsVisible="False" FontAttributes="Bold" TextColor="IndianRed" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" />
+
+                            <!--<StackLayout Orientation="Horizontal" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" >
+                                <Switch OnColor="#7698f3" IsToggled="{Binding LoginModel.RememberMe}" HorizontalOptions="Start" />
+                                <Label TextColor="White" Text="Remember Me" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" />
+                            </StackLayout>-->
+
+                            <Button Clicked="Button_Clicked" TextColor="White" Text="Login"  BackgroundColor="#93c393" BorderColor="DarkSeaGreen" BorderWidth="1" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3">
+                            </Button>
+                        </Grid>
+                    </StackLayout>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="35" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+                            <BoxView
+              VerticalOptions="Center"
+              WidthRequest="120"
+              HeightRequest="1"
+              BackgroundColor="White"
+              HorizontalOptions="CenterAndExpand" />
+                            <Label Text=" or " TextColor="White" VerticalOptions="CenterAndExpand" />
+                            <BoxView
+              VerticalOptions="Center"
+              WidthRequest="120"
+              HeightRequest="1"
+              BackgroundColor="White"
+              HorizontalOptions="CenterAndExpand" />
+                        </StackLayout>
+                        <Button Clicked="Button_Clicked_1" Text="Register"
+                                 HorizontalOptions="Center"
+                                 TextColor="White"
+                                 Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="0">
+                        </Button>
+                    </Grid>
+                </StackLayout>
+            </AbsoluteLayout>
+
+        </Grid>
+
     </ContentPage.Content>
 </ContentPage>

@@ -5,7 +5,25 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="GAb.App">
-	<!--<Application.Resources>
-        <StyleSheet Source="/Assets/styles.css" />
-	</Application.Resources>-->
+	<Application.Resources>
+        <Style TargetType ="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="#7698f3"></Setter>
+            <Setter Property="BarTextColor" Value="#ffffff"></Setter>
+        </Style>
+        <ResourceDictionary> 
+            <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeBrands">
+                <On Platform="Android" Value="FontAwesome5Brands.otf#Regular" />
+                <On Platform="iOS" Value="FontAwesome5Brands-Regular" />
+            </OnPlatform> 
+    
+            <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeSolid"> 
+                <On Platform="Android" Value="FontAwesome5Solid.otf#Regular" /> 
+                <On Platform="iOS" Value="FontAwesome5Free-Solid" /> 
+            </OnPlatform> 
+    
+            <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeRegular">
+                <On Platform="Android" Value="FontAwesome5Regular.otf#Regular" /> 
+                <On Platform="iOS" Value="FontAwesome5Free-Regular" /> 
+            </OnPlatform>
+        </ResourceDictionary>	</Application.Resources>
 </Application>

@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GAb.views.RegisterScreen">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GAb.views.RegisterScreen"
+             BackgroundColor="#7698f3"
+             >
 
     <ContentPage.Resources>
           <ResourceDictionary>
@@ -12,6 +14,9 @@
                 <Setter Property="WidthRequest" Value="100" />
                 <Setter Property="TextColor" Value="blue" />
                 <Setter Property="Margin" Value="10"/>
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="White"></Setter>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -26,7 +31,8 @@
             <Entry IsPassword="True" x:Name="password" Placeholder="Password"/>
             <Label Text="Please re-type your password:"/>
             <Entry IsPassword="True" x:Name="retyped_password" Placeholder="Password"/>
-            <Button Style="{StaticResource buttonStyle}" Clicked="Button_Clicked_1" Text="Confirm"/>
+            <Button Clicked="Button_Clicked_1" TextColor="White" Text="Confirm"  BackgroundColor="#93c393" BorderColor="DarkSeaGreen" BorderWidth="1" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3">
+                            </Button>
         </StackLayout>
     </ContentPage.Content>
 

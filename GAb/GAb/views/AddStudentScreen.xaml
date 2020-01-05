@@ -14,7 +14,7 @@
         <StackLayout Padding="10" Orientation="Vertical">
 
             <StackLayout HeightRequest="150" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" >
-              <Image MinimumWidthRequest="100" Source="user.png"/>
+              <Image MinimumWidthRequest="100" HeightRequest="150" Source="user.png"/>
             </StackLayout>
             <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" >
               <Label Text="Cne :"/>

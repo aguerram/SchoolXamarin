@@ -36,10 +36,12 @@
                 <RowDefinition Height="200"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
+
             <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Source="user.png"/>
             <StackLayout Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,20,0,0" HorizontalOptions="CenterAndExpand" HeightRequest="10" Spacing="10">
                 <Label Text="kjasghjkadjkashdksjah" x:Name="teacherName"/>
