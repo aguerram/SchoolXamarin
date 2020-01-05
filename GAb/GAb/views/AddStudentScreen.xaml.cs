@@ -20,7 +20,45 @@ namespace GAb.views
             studentService = new StudentService();
             BindingContext = optionsViewModel;
         }
-        
+        public bool validateInputs(string cne,string lastname,string firstname,string email,string phone,Option option)
+        {
+            if(cne == null)
+            {
+                CustomAlert("cne");
+                return false;
+            }
+            if (lastname == null)
+            {
+                CustomAlert("lastname");
+                return false;
+            }
+            if (firstname == null)
+            {
+                CustomAlert("firstname");
+                return false;
+            }
+            if (email == null)
+            {
+                CustomAlert("email");
+                return false;
+            }
+            if (phone == null)
+            {
+                CustomAlert("phone");
+                return false;
+            }
+            if (option == null)
+            {
+                CustomAlert("option");
+                return false;
+            }
+            return true;
+
+        }
+        public void CustomAlert(string input)
+        {
+            DisplayAlert("Failed", "please fill in your " + input + " please", "try again!");
+        }
         private async void saveStudentToDB(object sender, EventArgs e)
         {
             string cne = cneEntry.Text;
@@ -29,6 +67,10 @@ namespace GAb.views
             string email = emailEntry.Text;
             string phoneNumber = (phoneEntry.Text);
             Option option =(Option)optionEntry.SelectedItem;
+            if (!validateInputs(cne, lastname, firstname, email, phoneNumber, option))
+            {
+                return;
+            }
             Student student = new Student(cne,firstname,lastname,email,phoneNumber,option.ID);
             bool saved = await studentService.saveStudentToDB(student);
             if (saved)
@@ -42,7 +84,6 @@ namespace GAb.views
             Debug.WriteLine(option.title);
 
         }
-
 
     }
 }
