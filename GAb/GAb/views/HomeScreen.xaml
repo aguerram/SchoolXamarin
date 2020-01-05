@@ -28,18 +28,29 @@
         <ToolbarItem Clicked="Logout" Text="logout" />
     </ContentPage.ToolbarItems>
     <ScrollView>
-        <StackLayout Spacing="30" Padding="10">
-            <StackLayout HeightRequest="150" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" >
-                <Image MinimumWidthRequest="1000" Source="user.png"/>
+        <Grid  Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".2*"></RowDefinition>
+                <RowDefinition Height=".1*"></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Source="user.png"/>
+            <StackLayout Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,20,0,0" HorizontalOptions="CenterAndExpand" HeightRequest="10" Spacing="10">
+                <Label Text=" " x:Name="teacherName"/>
             </StackLayout>
-            <StackLayout HorizontalOptions="Center" HeightRequest="10" Spacing="0">
-                <Label Text="" x:Name="teacherName"/>
-            </StackLayout>
-            <StackLayout Margin="0,50,0,0" Spacing="20" HorizontalOptions="Center" Orientation="Horizontal">
+
+            <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"   HorizontalOptions="Center" Orientation="Horizontal">
                     <Button ImageSource="clipboard1.png" Clicked="NavigateToAbsenceScreen" Text="Absceasance" Style="{StaticResource buttonStyle}"/>
-                    <Button Clicked="NavigateToSearchScreen" ImageSource="loupe.png" Text="Search" Style="{StaticResource buttonStyle}"/>
+                    <Button ImageSource="loupe.png" Text="Search" Style="{StaticResource buttonStyle}"/>
             </StackLayout>
-            <StackLayout Spacing="20" HorizontalOptions="Center" Orientation="Horizontal">
+
+            <StackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"  HorizontalOptions="Center" Orientation="Horizontal">
                 <Button ImageSource="plus.png" Clicked="NavigateToAddStudentScreen" Text="Add student" Style="{StaticResource buttonStyle}"/>
                 <Button ImageSource="book.png" Clicked="NavigatToAddNewLesson" Text="New lesson" Style="{StaticResource buttonStyle}"/>
             </StackLayout>
@@ -47,6 +58,22 @@
                 <Button ImageSource="logout.png" Clicked="Logout" Text="Logout" Style="{StaticResource logout}"/>
             </StackLayout>-->
 
-        </StackLayout>
+        </Grid>
     </ScrollView>
 </ContentPage>
+
+ <!--<StackLayout HeightRequest="150" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" >
+                <Image MinimumWidthRequest="1000" Source="user.png"/>
+     </StackLayout>
+            <StackLayout HorizontalOptions="Center" HeightRequest="10" Spacing="0">
+                <Label StyleClass="mainPageTitle" Text="" x:Name="teacherName"/>
+            </StackLayout>
+            <StackLayout Margin="0,50,0,0" Spacing="20" HorizontalOptions="Center" Orientation="Horizontal">
+                    <Button ImageSource="clipboard1.png" Clicked="NavigateToAbsenceScreen" Text="Absceasance" Style="{StaticResource buttonStyle}"/>
+                    <Button ImageSource="loupe.png" Text="Search" Style="{StaticResource buttonStyle}"/>
+            </StackLayout>
+            <StackLayout Spacing="20" HorizontalOptions="Center" Orientation="Horizontal">
+                <Button ImageSource="plus.png" Clicked="NavigateToAddStudentScreen" Text="Add student" Style="{StaticResource buttonStyle}"/>
+                <Button ImageSource="book.png" Clicked="NavigatToAddNewLesson" Text="New lesson" Style="{StaticResource buttonStyle}"/>
+            </StackLayout>-->
+           
