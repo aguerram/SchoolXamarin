@@ -16,7 +16,7 @@ namespace GAb.dao
             //instanciate SQLLite Connection
             _database = new SQLiteAsyncConnection(dbPath);
             //create table from the model
-            _database.CreateTableAsync<models.Option>().Wait();
+            _database.CreateTableAsync<models.Student>().Wait();
         }
         public Task<List<models.Student>> ListAsync()
         {

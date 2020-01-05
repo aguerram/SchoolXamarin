@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using GAb.dao;
+using GAb.models;
 
 namespace GAb.services
 {
@@ -12,9 +13,15 @@ namespace GAb.services
         {
             studentDAO = new StudentDAO();
         }
-        public Task<List<models.Student>> GetOptions()
+
+        public async Task<bool> saveStudentToDB(Student student)
         {
-            return studentDAO.ListAsync();
+            int rows = await studentDAO.SaveAsync(student);
+            if (rows>0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
