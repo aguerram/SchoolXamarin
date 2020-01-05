@@ -35,10 +35,19 @@ namespace GAb.views
 		private void SaveAbsence(object sender, EventArgs e)
 		{
 			int absentStudent = 0;
+			Picker picker = (Picker)sender;
+			Option option = (Option)picker.SelectedItem;
+			Picker lPicker = (Picker)sender;
+			Option lesson = (Option)lPicker.SelectedItem;
 
+			if(option == null || lesson == null)
+			{
+				DisplayAlert("Failed", "Please select option and lesson","Try again");
+				return;
+			}
 			foreach (StudentListItem itm in studentListViewModel.Students)
 			{
-				//absenceDAO.saveAsync(itm);
+				//absenceDAO.saveAsync(new StudentAbsence(new DateTime(), itm.s.ID, lesson.ID,));
 			}
 		}
 		private void choiceChanges(object sender, EventArgs e)

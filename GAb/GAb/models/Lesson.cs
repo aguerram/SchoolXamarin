@@ -23,5 +23,6 @@ namespace GAb.models
 		public Lesson()
 		{
 		}
+
 	}
 }

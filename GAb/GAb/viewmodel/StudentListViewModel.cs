@@ -11,17 +11,19 @@ namespace GAb.viewmodel
 	{
 		OptionDAO optionDAO = new OptionDAO();
 		StudentDAO studentDAO = new StudentDAO();
+		LessonDAO lessonDAO = new LessonDAO();
 
 		public ObservableCollection<StudentListItem> Students { get { return students; } set { students = value;OnPropertyChanged(); } }
 		private ObservableCollection<StudentListItem> students { get; set; }
 		private List<Option> options { get; set; }
-		private List<Lesson> lessons { get; set; }
+		private ObservableCollection<Lesson> lessons { get; set; }
 
 
 		public List<Option> Options { get { return options; } set { options = value; OnPropertyChanged(); } }
-		public List<Lesson> Lessons { get; set; }
+		public ObservableCollection<Lesson> Lessons { get { return lessons; } set { lessons = value; OnPropertyChanged(); } }
 
 		private List<Student> StudentsDB { get; set; }
+		private List<Lesson> LessonDB { get; set; }
 
 		public StudentListViewModel()
 		{
@@ -30,10 +32,13 @@ namespace GAb.viewmodel
 			students = new ObservableCollection<StudentListItem>();
 
 			Options = new List<Option>();
-			Lessons = new List<Lesson>();
+			Lessons = new ObservableCollection<Lesson>();
+
 			options = new List<Option>();
-			lessons = new List<Lesson>();
+			lessons = new ObservableCollection<Lesson>();
+
 			StudentsDB = new List<Student>();
+			LessonDB = new List<Lesson>();
 
 			init();
 		}
@@ -41,7 +46,7 @@ namespace GAb.viewmodel
 		{
 			Options = await optionDAO.ListAsync();
 			StudentsDB = await studentDAO.ListAsync();
-			fillStudentsList();
+			LessonDB = await lessonDAO.ListAsync();
 			if (Options.Count == 0)
 			{
 				await optionDAO.SaveAsync(new models.Option("G.INFO"));
@@ -51,10 +56,7 @@ namespace GAb.viewmodel
 				Options = await optionDAO.ListAsync();
 			}
 		}
-		private void fillStudentsList()
-		{
-			
-		}
+
 		public void selectByOption(Option o)
 		{
 			Students.Clear();
@@ -62,9 +64,19 @@ namespace GAb.viewmodel
 			{
 				if (s.optionID != o.ID)
 					continue;
-				Console.WriteLine("Std : {0}", s.f_name);
 				Students.Add(new StudentListItem(s));
 			}
+
+			Lessons.Clear();
+			foreach(Lesson l in LessonDB)
+			{
+				
+				if(l.optionID == o.ID && App.currentTeacher.ID == l.teacherID)
+				
+					Lessons.Add(l);
+				}
+			}
+			
 		}
 	}
 	class StudentListItem : Student
@@ -81,4 +93,4 @@ namespace GAb.viewmodel
 		}
 	}
 	
-}
+

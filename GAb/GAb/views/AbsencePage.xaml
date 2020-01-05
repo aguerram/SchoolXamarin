@@ -30,11 +30,12 @@
                 </Picker>
 
                 <Label Text="Lesson" Grid.Row="0" Grid.Column="1" />
-                <Picker Grid.Row="1" Grid.Column="1" Title="Lesson">
-                    <Picker.Items>
-                        <x:String>C#</x:String>
-                        <x:String>Java</x:String>
-                    </Picker.Items>
+                <Picker 
+                    ItemsSource="{Binding Lessons}" 
+                    ItemDisplayBinding="{Binding title}" 
+                    Grid.Row="1" 
+                    Grid.Column="1" 
+                    Title="Lesson">
                 </Picker>
             </Grid>
             <ListView SelectionMode="None" x:Name="studentsListView" ItemsSource="{Binding Students}">
