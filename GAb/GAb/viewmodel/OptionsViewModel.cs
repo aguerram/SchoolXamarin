@@ -14,8 +14,6 @@ namespace GAb.viewmodel
     {
         public OptionDAO optionDAO;
         public List<Option> options;
-
-
         public OptionsViewModel()
         {
             Options = new List<Option>();
@@ -35,13 +33,6 @@ namespace GAb.viewmodel
         public async void fillOptions()
         {
             this.Options = await optionDAO.ListAsync();
-            Debug.Write("****************" +Options.Count);
-            foreach (Option o in Options)
-            {
-                Debug.Write(o.title);
-            }
-            Debug.Write("**********************************************");
-
         }
 		
     }
