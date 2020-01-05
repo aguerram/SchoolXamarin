@@ -21,10 +21,10 @@ namespace GAb.dao
 		{
 			return _database.InsertAsync(sa);
 		}
-		public Task<List<models.StudentAbsence>> getStudentAbsence(int student_id)
+		public Task<List<models.StudentAbsence>> getStudentAbsence(int student_id, int lesson_id)
 		{
 			return _database.Table<models.StudentAbsence>()
-				.Where(el => el.studentID == student_id)
+				.Where(el => el.studentID == student_id && el.lessonID == lesson_id)
 				.ToListAsync();
 		}
 

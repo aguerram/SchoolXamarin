@@ -20,6 +20,7 @@ namespace GAb.views
 		private Lesson currentLesson = null;
 
 		private StudentDAO studentDao;
+		private StudentAbsenceDAO absenceDAO;
 
 		public SearchScreen()
 		{
@@ -29,6 +30,7 @@ namespace GAb.views
 		public void init()
 		{
 			searchViewModel = new SearchViewModel();
+			absenceDAO = new StudentAbsenceDAO();
 			BindingContext = searchViewModel;
 
 			studentDao = new StudentDAO();
@@ -63,8 +65,22 @@ namespace GAb.views
 		private async void search()
 		{
 			var list = await studentDao.GetByNameAsync(nameEntry.Text.Trim());
-			var screen = new SearchResultsScreen(list);
-			Navigation.PushModalAsync(screen);
+			List<StudentAbsenceRelated> finalList = new List<StudentAbsenceRelated>();
+			if(list.Count > 0)
+			{
+				foreach(Student s in list)
+				{
+					var absenceList = await absenceDAO.getStudentAbsence(s.ID,currentLesson.ID);
+					finalList.Add(new StudentAbsenceRelated(absenceList, s));
+				}
+				var screen = new SearchResultsScreen(finalList);
+				Navigation.PushModalAsync(screen);
+			}
+			else
+			{
+				DisplayAlert("Warning", "No results found for " + nameEntry.Text, "Close");
+			}
+			
 		}
 	}
 }

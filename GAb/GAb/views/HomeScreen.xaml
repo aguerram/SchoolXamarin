@@ -30,10 +30,10 @@
     <ScrollView>
         <Grid  Padding="10">
             <Grid.RowDefinitions>
-                <RowDefinition Height=".2*"></RowDefinition>
-                <RowDefinition Height=".1*"></RowDefinition>
-                <RowDefinition Height=".3*"></RowDefinition>
-                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition Height="200"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="200"></RowDefinition>
+                <RowDefinition Height="200"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -42,12 +42,12 @@
             </Grid.ColumnDefinitions>
             <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Source="user.png"/>
             <StackLayout Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,20,0,0" HorizontalOptions="CenterAndExpand" HeightRequest="10" Spacing="10">
-                <Label Text=" " x:Name="teacherName"/>
+                <Label Text="kjasghjkadjkashdksjah" x:Name="teacherName"/>
             </StackLayout>
 
             <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"   HorizontalOptions="Center" Orientation="Horizontal">
                     <Button ImageSource="clipboard1.png" Clicked="NavigateToAbsenceScreen" Text="Absceasance" Style="{StaticResource buttonStyle}"/>
-                    <Button ImageSource="loupe.png" Text="Search" Style="{StaticResource buttonStyle}"/>
+                    <Button ImageSource="loupe.png" Clicked="NavigateToSearchScreen" Text="Search" Style="{StaticResource buttonStyle}"/>
             </StackLayout>
 
             <StackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"  HorizontalOptions="Center" Orientation="Horizontal">

@@ -13,15 +13,16 @@ namespace GAb.views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SearchResultsScreen : ContentPage
 	{
-		private List<Student> studentsList { get; set; }
-		public List<Student> StudentsList { get { return studentsList; } set { studentsList = value; } }
 
 		private SearchResultsViewModel sModel;
-		public SearchResultsScreen(List<Student> list)
+		private List<StudentAbsenceRelated> finalList;
+
+
+		public SearchResultsScreen(List<StudentAbsenceRelated> finalList)
 		{
+			this.finalList = finalList;
 			InitializeComponent();
-			StudentsList = list;
-			sModel = new SearchResultsViewModel(list);
+			sModel = new SearchResultsViewModel(finalList);
 
 			BindingContext = sModel;
 		}

@@ -16,7 +16,7 @@
                     <DataTemplate>
                         <ViewCell>
                             <FlexLayout HorizontalOptions="FillAndExpand" AlignItems="Center" JustifyContent="SpaceBetween">
-                                <Label Text="{Binding name}" VerticalOptions="Center"/>
+                                <Label Text="{Binding fullName}" VerticalOptions="Center"/>
                             </FlexLayout>
 
                         </ViewCell>
