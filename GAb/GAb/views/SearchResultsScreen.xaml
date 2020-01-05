@@ -5,26 +5,64 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="GAb.views.SearchResultsScreen">
-    <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="Absence results : "/>
-            <ListView SelectionMode="None" x:Name="studentsListView" ItemsSource="{Binding Students}">
-                <ListView.Header>
-                    List of students
-                </ListView.Header>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <FlexLayout HorizontalOptions="FillAndExpand" AlignItems="Center" JustifyContent="SpaceBetween">
-                                <Label Text="{Binding fullName}" VerticalOptions="Center"/>
-                                <Label Text="{Binding totalPresence}" VerticalOptions="Center"/>
-                                <Label Text="{Binding totalAbsence}" VerticalOptions="Center"/>
-                            </FlexLayout>
+        <Grid
+            Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="1" Grid.Column="1" Text="Absence results : "/>
+            <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+                <ListView SelectionMode="None" x:Name="studentsListView" ItemsSource="{Binding Students}">
+                    <ListView.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" Text="List of students" />
+                        <Label Grid.Column="2" Grid.Row="0" Text="presences" />
+                        <Label Grid.Column="3" Grid.Row="0" Text="abscences" />
+                    </Grid>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding fullName}" VerticalOptions="Center"/>
+                        <Label Grid.Column="2" Grid.Row="0" Text="{Binding totalPresence}" />
+                        <Label Grid.Column="3" Grid.Row="0" Text="{Binding totalAbsence}" />
+                    </Grid>
 
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </ContentPage.Content>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+        </Grid>
 </ContentPage>
+

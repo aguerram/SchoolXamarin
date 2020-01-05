@@ -7,7 +7,7 @@
              x:Class="GAb.App">
 	<Application.Resources>
         <Style TargetType ="NavigationPage">
-            <Setter Property="BarBackgroundColor" Value="#7698f3"></Setter>
+            <Setter Property="BarBackgroundColor" Value="#445E93"></Setter>
             <Setter Property="BarTextColor" Value="#ffffff"></Setter>
         </Style>
         <ResourceDictionary> 

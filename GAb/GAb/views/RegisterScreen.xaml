@@ -20,9 +20,6 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Signup" />
-    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Margin="10,10,10,0" VerticalOptions="Center" >
             <Label Text="Username:"/>

@@ -53,7 +53,8 @@ namespace GAb.views
             else
 			{
                 PasswordError.Text = "Username or password are incorrect";
-                await DisplayAlert("Login failed", "Username or password are incorrect", "Close");
+                PasswordError.IsVisible = true;
+                //await DisplayAlert("Login failed", "Username or password are incorrect", "Close");
 				passwordEntry.Text = "";
                 App.IsUserLoggedIn = false;
 

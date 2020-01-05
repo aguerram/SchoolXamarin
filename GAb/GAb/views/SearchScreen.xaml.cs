@@ -74,7 +74,7 @@ namespace GAb.views
 					finalList.Add(new StudentAbsenceRelated(absenceList, s));
 				}
 				var screen = new SearchResultsScreen(finalList);
-				Navigation.PushModalAsync(screen);
+				Navigation.PushAsync(screen);
 			}
 			else
 			{
