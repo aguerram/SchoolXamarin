@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using GAb.models;
 using GAb.views;
 using Xamarin.Forms;
@@ -11,7 +12,8 @@ namespace GAb
         public static bool IsUserLoggedIn { get; set; }
         public static Teacher currentTeacher { get; set; }
         public HomeScreen homeScreen { get; set; }
-        public App()
+
+		public App()
 		{
 			InitializeComponent();
 

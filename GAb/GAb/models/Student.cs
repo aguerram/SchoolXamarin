@@ -5,7 +5,7 @@ using SQLite;
 
 namespace GAb.models
 {
-	class Student
+	public class Student
 	{
 
 

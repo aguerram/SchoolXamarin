@@ -1,4 +1,5 @@
-﻿using GAb.models;
+﻿using GAb.dao;
+using GAb.models;
 using GAb.viewmodel;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ namespace GAb.views
 		private Option currentOption = null;
 		private Lesson currentLesson = null;
 
+		private StudentDAO studentDao;
+
 		public SearchScreen()
 		{
 			InitializeComponent();
@@ -27,6 +30,8 @@ namespace GAb.views
 		{
 			searchViewModel = new SearchViewModel();
 			BindingContext = searchViewModel;
+
+			studentDao = new StudentDAO();
 		}
 		private void choiceChanges(object sender, EventArgs e)
 		{
@@ -40,6 +45,27 @@ namespace GAb.views
 			Picker picker = (Picker)sender;
 			Lesson lesson = (Lesson)picker.SelectedItem;
 			currentLesson = lesson;
+		}
+
+		//Search button
+		private void Button_Clicked(object sender, EventArgs e)
+		{
+			if(currentLesson == null || currentOption == null)
+			{
+				DisplayAlert("Error", "Please select option and lesson","Try again");
+			}
+			else
+			{
+				search();
+			}
+		}
+
+		private async void search()
+		{
+			var list = await studentDao.GetByNameAsync(nameEntry.Text.Trim());
+			var screen = new SearchResultsScreen();
+			screen.StudentsList = list;
+			Navigation.PushModalAsync(screen);
 		}
 	}
 }
