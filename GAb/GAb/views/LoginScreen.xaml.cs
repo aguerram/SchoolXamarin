@@ -38,7 +38,6 @@ namespace GAb.views
 			if(valid)
 			{
                 //DisplayAlert("Success", "Welcome " + usernameEntry.Text, "Okay");
-                await Navigation.PushAsync(new HomeScreen());
                 App.IsUserLoggedIn = true;
                 App.currentTeacher = teacher;
                 Debug.WriteLine("null");
@@ -48,8 +47,10 @@ namespace GAb.views
                     SharedPreferences.teacher = teacher;
                     SharedPreferences.isLoggedIn = true;
                 }
-			}
-			else
+                await Navigation.PushAsync(new HomeScreen());
+
+            }
+            else
 			{
 				await DisplayAlert("Login failed", "Username or password are incorrect", "Close");
 				passwordEntry.Text = "";
