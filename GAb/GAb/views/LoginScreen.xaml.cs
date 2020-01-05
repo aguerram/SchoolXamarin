@@ -40,7 +40,6 @@ namespace GAb.views
                 //DisplayAlert("Success", "Welcome " + usernameEntry.Text, "Okay");
                 App.IsUserLoggedIn = true;
                 App.currentTeacher = teacher;
-                Debug.WriteLine("null");
                 if (teacher != null)
                 {
                     Debug.WriteLine("not null");
