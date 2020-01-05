@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GAb.views.AddNewLessonScreen">
+    <ContentPage.ToolbarItems>
+            <ToolbarItem Clicked="saveLessonToDB" x:Name="saveLesson" Text="save"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout Padding="10" Orientation="Vertical">
+        <StackLayout >
+            <Label Text="Lesson name:"></Label>
+            <Entry x:Name="lessonName" Placeholder="Enter a name for the new lesson"/>
+        </StackLayout>
+        <StackLayout>
+                    <Label Text="Option:"></Label>
+                    <Picker
+                        x:Name="optionPicker"
+                        ItemsSource="{Binding Options}" 
+                        ItemDisplayBinding="{Binding title}" 
+                        Grid.Row="1" 
+                        Grid.Column="0" 
+                        Title="Option">
+                    </Picker>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

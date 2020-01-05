@@ -30,6 +30,13 @@ namespace GAb.services
 
             return ok;
         }
+        public async Task<Teacher> getCurrentTeacher(String username, String password)
+        {
+            bool ok = false;
+            Teacher teacher = new Teacher(username, password);
+            Teacher res = await teacherDAO.LoginAsync(teacher);
+            return res;
+        }
 
         public async Task<bool> createTeacher(String username, String password)
         {

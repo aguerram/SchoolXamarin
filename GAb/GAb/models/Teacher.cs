@@ -3,7 +3,7 @@ using SQLite;
 
 namespace GAb.models
 {
-	class Teacher
+	public class Teacher
 	{
 		[AutoIncrement, PrimaryKey]
 		public int ID { set; get; }

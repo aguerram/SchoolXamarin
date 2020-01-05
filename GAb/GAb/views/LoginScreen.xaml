@@ -5,17 +5,32 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="GAb.views.LoginScreen">
+    <ContentPage.Resources>
+          <ResourceDictionary>
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="BorderColor" Value="blue" />
+                <Setter Property="BorderRadius" Value="5" />
+                <Setter Property="BorderWidth" Value="0.5" />
+                <Setter Property="WidthRequest" Value="100" />
+                <Setter Property="TextColor" Value="blue" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Signup" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Margin="10,10,10,0" VerticalOptions="Center" >
+            <Label Text="Username : "/>
             <Entry x:Name="usernameEntry" Placeholder="Username"/>
+            <Label  Text="Password : "/>
             <Entry x:Name="passwordEntry" IsPassword="True" Placeholder="Password"/>
-            <FlexLayout HorizontalOptions="Center"  FlowDirection="LeftToRight" >
-                <Button Clicked="Button_Clicked" Text="Login"/>
-                <Button Clicked="Button_Clicked_1" Text="Signup"/>
-            </FlexLayout>
+            <StackLayout Margin="10" HorizontalOptions="Center"  Orientation="Horizontal" >
+                <Button Style="{StaticResource buttonStyle}" Clicked="Button_Clicked" Text="Login"/>
+                <Button Style="{StaticResource buttonStyle}"  Clicked="Button_Clicked_1" Text="Signup"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

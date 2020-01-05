@@ -16,6 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Remove="AppTheme\LighTheme.xaml" />
+    <EmbeddedResource Remove="AppTheme\LightTheme.xaml" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Update="views\AbsencePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -25,5 +29,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="viewmodel\ViewModelBase.cs" />
+    <Compile Remove="AppTheme\LightTheme.xaml.cs" />
+    <Compile Remove="AppTheme\LighTheme.xaml.cs" />
+    <Compile Remove="AppTheme\LighTheme.cs" />
   </ItemGroup>
 </Project>

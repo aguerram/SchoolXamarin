@@ -1,7 +1,20 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GAb.views.RegisterScreen">
 
-
+    <ContentPage.Resources>
+          <ResourceDictionary>
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="BorderColor" Value="blue" />
+                <Setter Property="BorderRadius" Value="5" />
+                <Setter Property="BorderWidth" Value="0.5" />
+                <Setter Property="WidthRequest" Value="100" />
+                <Setter Property="TextColor" Value="blue" />
+                <Setter Property="Margin" Value="10"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
      <ContentPage.ToolbarItems>
         <ToolbarItem Text="Signup" />
     </ContentPage.ToolbarItems>
@@ -10,10 +23,10 @@
             <Label Text="Username:"/>
             <Entry x:Name="username" Placeholder="Username"/>
             <Label Text="Password:"/>
-            <Entry x:Name="password" Placeholder="Password"/>
+            <Entry IsPassword="True" x:Name="password" Placeholder="Password"/>
             <Label Text="Please re-type your password:"/>
-            <Entry x:Name="retyped_password" Placeholder="Password"/>
-            <Button Clicked="Button_Clicked_1" Text="Confirm"/>
+            <Entry IsPassword="True" x:Name="retyped_password" Placeholder="Password"/>
+            <Button Style="{StaticResource buttonStyle}" Clicked="Button_Clicked_1" Text="Confirm"/>
         </StackLayout>
     </ContentPage.Content>
 

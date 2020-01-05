@@ -27,9 +27,9 @@
                 <Image Source="plus.png"/>
             </StackLayout>
             <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                <Button Text="New lesson" Style="{StaticResource buttonStyle}"/>
-                <StackLayout  Orientation="Horizontal" WidthRequest="30"  HeightRequest="1" Grid.Column="0">
-                    <Image Aspect="Fill" Source="book.png"/>
+                <Button Clicked="NavigatToAddNewLesson" Text="New lesson" Style="{StaticResource buttonStyle}"/>
+                <StackLayout  Orientation="Horizontal" WidthRequest="30"  HeightRequest="10" Grid.Column="0">
+                    <Image Aspect="AspectFit" Source="book.png"/>
                 </StackLayout>
             </StackLayout>
             <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
@@ -37,7 +37,7 @@
                 <Image Source="loupe.png"/>
             </StackLayout>
             <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                <Button Text="Logout" Style="{StaticResource buttonStyle}"/>
+                <Button Clicked="Logout" Text="Logout" Style="{StaticResource buttonStyle}"/>
                 <Image Source="logout.png"/>
             </StackLayout>
         </StackLayout>

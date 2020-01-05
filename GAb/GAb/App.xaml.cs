@@ -1,4 +1,5 @@
 ﻿using System;
+using GAb.models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,9 +8,17 @@ namespace GAb
     public partial class App : Application
 	{
         public static bool IsUserLoggedIn { get; set; }
+        public static Teacher currentTeacher { get; set; }
         public App()
 		{
 			InitializeComponent();
+
+            VerifyLogin();
+     
+		}
+
+        public void VerifyLogin()
+        {
             if (!IsUserLoggedIn)
             {
                 MainPage = new NavigationPage(new views.LoginScreen());
@@ -18,8 +27,7 @@ namespace GAb
             {
                 MainPage = new NavigationPage(new views.HomeScreen());
             }
-        
-		}
+        }
 
 		protected override void OnStart()
 		{

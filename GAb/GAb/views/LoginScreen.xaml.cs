@@ -1,4 +1,5 @@
-﻿using GAb.services;
+﻿using GAb.models;
+using GAb.services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,10 +18,12 @@ namespace GAb.views
 		public LoginScreen()
 		{
 			InitializeComponent();
-		}
+            NavigationPage.SetHasBackButton(this, false);
+        }
 
-		//Login button
-		private async void Button_Clicked(object sender, EventArgs e)
+
+        //Login button
+        private async void Button_Clicked(object sender, EventArgs e)
 		{
         //    //Navigation.PushAsync(new HomeScreen());
         //}
@@ -28,17 +31,22 @@ namespace GAb.views
 			String username = usernameEntry.Text;
 			String password = passwordEntry.Text;
 			valid = await loginService.checkCredentials(username, password);
+            Teacher teacher = await loginService.getCurrentTeacher(username, password);
 			if(valid)
 			{
                 //DisplayAlert("Success", "Welcome " + usernameEntry.Text, "Okay");
                 await Navigation.PushAsync(new HomeScreen());
+                App.IsUserLoggedIn = true;
+                App.currentTeacher = teacher;
 			}
 			else
 			{
 				await DisplayAlert("Login failed", "Username or password are incorrect", "Close");
 				passwordEntry.Text = "";
-			}
-		}
+                App.IsUserLoggedIn = false;
+
+            }
+        }
 
         //Signup button
         private void Button_Clicked_1(object sender, EventArgs e)
