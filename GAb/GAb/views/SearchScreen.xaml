@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="GAb.views.SearchScreen">
+    <ContentPage.Content>
+        <StackLayout Margin="10,10,10,0" VerticalOptions="Center" HorizontalOptions="Center">
+            <Entry Placeholder="Student name"/>
+            <Label Text="Select an option :"/>
+            <Picker
+                ItemsSource="{Binding Options}"
+                ItemDisplayBinding="{Binding title}"
+                Title="Option"
+                SelectedIndexChanged="choiceChanges"
+                >
+                
+            </Picker>
+            <Label Text="Select an lesson :"/>
+            <Picker
+                ItemsSource="{Binding Lessons}"
+                ItemDisplayBinding="{Binding title}"
+                Title="Lesson"
+                SelectedIndexChanged="lessonChanges"
+                >
+                
+            </Picker>
+            <FlexLayout>
+                <Button Text="Search" />
+            </FlexLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

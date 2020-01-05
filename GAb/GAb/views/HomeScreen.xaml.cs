@@ -31,7 +31,10 @@ namespace GAb.views
 		{
 			Navigation.PushAsync(new AbsencePage());
 		}
-
+		private void NavigateToSearchScreen(object sender,EventArgs e)
+		{
+			Navigation.PushAsync(new SearchScreen());
+		}
 	}
 
 }

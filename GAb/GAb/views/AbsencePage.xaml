@@ -33,6 +33,7 @@
                 <Picker 
                     ItemsSource="{Binding Lessons}" 
                     ItemDisplayBinding="{Binding title}" 
+                    SelectedIndexChanged="lessonChanges"
                     Grid.Row="1" 
                     Grid.Column="1" 
                     Title="Lesson">
