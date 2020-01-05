@@ -39,4 +39,7 @@
     <Compile Remove="AppTheme\LighTheme.xaml.cs" />
     <Compile Remove="AppTheme\LighTheme.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\" />
+  </ItemGroup>
 </Project>
