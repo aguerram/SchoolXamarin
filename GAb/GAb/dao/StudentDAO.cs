@@ -29,11 +29,11 @@ namespace GAb.dao
                             .Where(i => i.ID == id)
                             .FirstOrDefaultAsync();
         }
-        public Task<models.Student> GetByUsernameAsync(string firstname)
+        public Task<List<models.Student>> GetByNameAsync(string name)
         {
-            return _database.Table<models.Student>()
-                            .Where(i => i.f_name == firstname)
-                            .FirstOrDefaultAsync();
+			return _database.Table<models.Student>()
+							.Where(i => i.f_name.ToLower().Equals(name) || i.l_name.ToLower().Equals(name))
+							.ToListAsync();
         }
 
 

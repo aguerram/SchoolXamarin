@@ -49,7 +49,7 @@
 
             <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"   HorizontalOptions="Center" Orientation="Horizontal">
                     <Button ImageSource="clipboard1.png" Clicked="NavigateToAbsenceScreen" Text="Absceasance" Style="{StaticResource buttonStyle}"/>
-                    <Button ImageSource="loupe.png" Text="Search" Style="{StaticResource buttonStyle}"/>
+                    <Button ImageSource="loupe.png" Clicked="NavigateToSearchScreen" Text="Search" Style="{StaticResource buttonStyle}"/>
             </StackLayout>
 
             <StackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"  HorizontalOptions="Center" Orientation="Horizontal">

@@ -7,7 +7,7 @@
              x:Class="GAb.views.SearchScreen">
     <ContentPage.Content>
         <StackLayout Margin="10,10,10,0" VerticalOptions="Center" HorizontalOptions="Center">
-            <Entry Placeholder="Student name"/>
+            <Entry x:Name="nameEntry" Placeholder="Student name (First or last name)"/>
             <Label Text="Select an option :"/>
             <Picker
                 ItemsSource="{Binding Options}"
@@ -27,7 +27,7 @@
                 
             </Picker>
             <FlexLayout>
-                <Button Text="Search" />
+                <Button Clicked="Button_Clicked" Text="Search" />
             </FlexLayout>
         </StackLayout>
     </ContentPage.Content>

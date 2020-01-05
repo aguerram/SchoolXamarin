@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="GAb.views.SearchResultsScreen">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="Absence results : "/>
+            <ListView SelectionMode="None" x:Name="studentsListView" ItemsSource="{Binding Students}">
+                <ListView.Header>
+                    List of students
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <FlexLayout HorizontalOptions="FillAndExpand" AlignItems="Center" JustifyContent="SpaceBetween">
+                                <Label Text="{Binding fullName}" VerticalOptions="Center"/>
+                                <Label Text="{Binding totalPresence}" VerticalOptions="Center"/>
+                                <Label Text="{Binding totalAbsence}" VerticalOptions="Center"/>
+                            </FlexLayout>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

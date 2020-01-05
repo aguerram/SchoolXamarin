@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GAb.models
 {
-	class StudentAbsence
+	public class StudentAbsence
 	{
 		[AutoIncrement, PrimaryKey]
 		public int ID { set; get; }
