@@ -20,8 +20,6 @@ namespace GAb.views
             String usernameS = username.Text;
             String passwordS = password.Text;
             String retypedPasswordS = retyped_password.Text;
-            await DisplayAlert("debug", passwordS, "ok");
-            await DisplayAlert("debug", retypedPasswordS, "ok");
             if (usernameS==null || passwordS==null || retyped_password==null)
             {
                 await DisplayAlert("Failed", "Please check your inputs!", "try again!");

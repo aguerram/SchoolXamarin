@@ -42,6 +42,14 @@ namespace GAb.viewmodel
 		public async void init()
 		{
 			Options = await optionDAO.ListAsync();
+			if(Options.Count == 0)
+			{
+				await optionDAO.SaveAsync(new models.Option("G.INFO"));
+				await optionDAO.SaveAsync(new models.Option("GTR"));
+				await optionDAO.SaveAsync(new models.Option("GIndus"));
+				await optionDAO.SaveAsync(new models.Option("GPMC"));
+				Options = await optionDAO.ListAsync();
+			}
 		}
 	}
 	class StudentListItem : Student
