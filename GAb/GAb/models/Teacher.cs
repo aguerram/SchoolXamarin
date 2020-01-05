@@ -23,5 +23,10 @@ namespace GAb.models
 		public Teacher()
 		{
 		}
-	}
+
+        public override string ToString()
+        {
+            return this.username;
+        }
+    }
 }

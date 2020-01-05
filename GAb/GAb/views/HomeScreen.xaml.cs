@@ -1,17 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using GAb.models;
 using Xamarin.Forms;
 
 namespace GAb.views
 {
     public partial class HomeScreen : ContentPage
     {
+        Teacher currentTeacher;
         public HomeScreen()
         {
             InitializeComponent();
             NavigationPage.SetHasBackButton(this, false);
+            Debug.WriteLine(SharedPreferences.teacher.username);
+            //currentTeacher = App.currentTeacher;
+            //Debug.WriteLine(currentTeacher);
+            //String test = currentTeacher.ToString();
+            //teacherName.Text = String.Format("Welcome back Mr/Mrs {0}", test);
         }
+
+
 
         private void NavigateToAddStudentScreen(object sender, EventArgs e)
         {

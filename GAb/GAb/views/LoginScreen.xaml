@@ -24,7 +24,7 @@
     <ContentPage.Content>
         <StackLayout Margin="10,10,10,0" VerticalOptions="Center" >
             <Label Text="Username : "/>
-            <Entry x:Name="usernameEntry" Placeholder="Username"/>
+            <Entry  x:Name="usernameEntry" Placeholder="Username"/>
             <Label  Text="Password : "/>
             <Entry x:Name="passwordEntry" IsPassword="True" Placeholder="Password"/>
             <StackLayout Margin="10" HorizontalOptions="Center"  Orientation="Horizontal" >
