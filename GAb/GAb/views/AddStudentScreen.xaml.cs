@@ -29,7 +29,7 @@ namespace GAb.views
             string email = emailEntry.Text;
             string phoneNumber = (phoneEntry.Text);
             Option option =(Option)optionEntry.SelectedItem;
-			if(option == null)
+			if(option != null)
 			{
 				Student student = new Student(cne, firstname, lastname, email, phoneNumber, option.ID);
 				bool saved = await studentService.saveStudentToDB(student);
@@ -41,6 +41,7 @@ namespace GAb.views
 					firstnameEntry.Text = "";
 					emailEntry.Text = "";
 					phoneEntry.Text = "";
+					optionEntry.SelectedItem = null;
 				}
 				else
 				{
